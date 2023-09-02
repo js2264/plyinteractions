@@ -57,6 +57,10 @@
 # S4 method for GInteractions
 $(x, name)
 
+anchors1(x)
+
+anchors2(x)
+
 seqnames1(x)
 
 seqnames2(x)
@@ -77,6 +81,16 @@ strand1(x)
 
 strand2(x)
 
+ranges1(x)
+
+ranges2(x)
+
+# S4 method for GInteractions
+anchors1(x)
+
+# S4 method for GInteractions
+anchors2(x)
+
 # S4 method for GInteractions
 seqnames1(x)
 
@@ -105,7 +119,13 @@ width2(x)
 strand1(x)
 
 # S4 method for GInteractions
-strand2(x)</code></pre></div>
+strand2(x)
+
+# S4 method for GInteractions
+ranges1(x)
+
+# S4 method for GInteractions
+ranges2(x)</code></pre></div>
     </div>
 
     <div class="section level2">
@@ -132,8 +152,22 @@ Note that auto-completion works with <code>$</code>.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">gi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  seqnames1 <span class="op">=</span> <span class="st">'chr1'</span>, start1 <span class="op">=</span> <span class="fl">1</span>, end1 <span class="op">=</span> <span class="fl">10</span>, </span></span>
-<span class="r-in"><span>  seqnames2 <span class="op">=</span> <span class="st">'chr1'</span>, start2 <span class="op">=</span> <span class="fl">1</span>, end2 <span class="op">=</span> <span class="fl">10</span></span></span>
+<span class="r-in"><span>  seqnames2 <span class="op">=</span> <span class="st">'chr1'</span>, start2 <span class="op">=</span> <span class="fl">2</span>, end2 <span class="op">=</span> <span class="fl">20</span></span></span>
 <span class="r-in"><span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="ginteractions-construct.html">as_ginteractions</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">'cis'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">anchors1</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GRanges object with 1 range and 0 metadata columns:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       seqnames    ranges strand</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;Rle&gt; &lt;IRanges&gt;  &lt;Rle&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]     chr1      1-10      *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 1 sequence from an unspecified genome; no seqlengths</span>
+<span class="r-in"><span><span class="fu">anchors2</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> GRanges object with 1 range and 0 metadata columns:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       seqnames    ranges strand</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          &lt;Rle&gt; &lt;IRanges&gt;  &lt;Rle&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]     chr1      2-20      *</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 1 sequence from an unspecified genome; no seqlengths</span>
 <span class="r-in"><span><span class="fu">seqnames1</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> factor-Rle of length 1 with 1 run</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Lengths:    1</span>
@@ -147,15 +181,25 @@ Note that auto-completion works with <code>$</code>.</p>
 <span class="r-in"><span><span class="fu">start1</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
 <span class="r-in"><span><span class="fu">start2</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2</span>
 <span class="r-in"><span><span class="fu">end1</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
 <span class="r-in"><span><span class="fu">end2</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 20</span>
 <span class="r-in"><span><span class="fu">width1</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
 <span class="r-in"><span><span class="fu">width2</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 19</span>
+<span class="r-in"><span><span class="fu">ranges1</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IRanges object with 1 range and 0 metadata columns:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           start       end     width</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;integer&gt; &lt;integer&gt; &lt;integer&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]         1        10        10</span>
+<span class="r-in"><span><span class="fu">ranges2</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> IRanges object with 1 range and 0 metadata columns:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           start       end     width</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;integer&gt; &lt;integer&gt; &lt;integer&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]         2        20        19</span>
 <span class="r-in"><span><span class="fu">strand1</span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> factor-Rle of length 1 with 1 run</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Lengths: 1</span>
