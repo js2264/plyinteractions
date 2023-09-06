@@ -41,7 +41,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Mutate columns from a GInteractions object</h1>
-      <small class="dont-index">Source: <a href="https://github.com/js2264/plyinteractions/blob/HEAD/R/dplyr-mutate.R" class="external-link"><code>R/dplyr-mutate.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/js2264/plyinteractions/blob/HEAD/R/mutate.R" class="external-link"><code>R/mutate.R</code></a></small>
       <div class="d-none name"><code>ginteractions-mutate.Rd</code></div>
     </div>
 
@@ -95,8 +95,8 @@ to create/modify.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [2]      chr1     10-50       * ---      chr2     30-40       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score       type2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt; &lt;character&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.474250         cis</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.868068       trans</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.150300         cis</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.904952       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 4 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -139,9 +139,6 @@ to create/modify.</p></dd>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Note how the core columns are modified sequentially </span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="co"># Note how the core columns are modified sequentially </span></span></span>
-<span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">gi</span> <span class="op">|&gt;</span> </span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>start1 <span class="op">=</span> <span class="fl">1</span>, end1 <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GInteractions object with 2 interactions and 0 metadata columns:</span>
@@ -152,6 +149,7 @@ to create/modify.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 3 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
+<span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">gi</span> <span class="op">|&gt;</span> </span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>start1 <span class="op">=</span> <span class="fl">1</span>, end1 <span class="op">=</span> <span class="fl">10</span>, width1 <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GInteractions object with 2 interactions and 0 metadata columns:</span>
@@ -176,8 +174,8 @@ to create/modify.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> GInteractions object with 2 interactions and 3 metadata columns:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]      chr1     10-20       * ---      chr1     50-51       * |  0.116315</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]      chr1     10-50       * ---      chr2     30-40       * |  0.906469</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]      chr1     10-20       * ---      chr1     50-51       * |  0.275131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]      chr1     10-50       * ---      chr2     30-40       * |  0.747764</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         cis  distance</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;Rle&gt; &lt;integer&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  TRUE        30</span>
