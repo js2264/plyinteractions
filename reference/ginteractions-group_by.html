@@ -54,9 +54,6 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S3 method for GInteractions</span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">.data</span>, <span class="va">...</span>, .add <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># S3 method for GroupedGInteractions</span></span>
-<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">.data</span>, <span class="va">...</span>, .add <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span></span>
 <span><span class="co"># S3 method for GInteractions</span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">ungroup</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -109,10 +106,10 @@ groups. To add to the existing groups, use .add = TRUE.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.936269</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.669030</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.397051</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.859872</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.382483</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.874035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.283290</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.566123</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 5 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -152,10 +149,10 @@ groups. To add to the existing groups, use .add = TRUE.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.936269</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.669030</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.397051</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.859872</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.382483</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.874035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.283290</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.566123</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 5 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -182,10 +179,10 @@ groups. To add to the existing groups, use .add = TRUE.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score     class</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt; &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.936269         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.669030         2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.397051         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.859872         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.382483         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.874035         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.283290         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.566123         2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 5 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -231,10 +228,10 @@ groups. To add to the existing groups, use .add = TRUE.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score     class</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt; &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.936269         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.669030         2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.397051         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.859872         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.382483         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.874035         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.283290         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.566123         2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 5 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -249,10 +246,10 @@ groups. To add to the existing groups, use .add = TRUE.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score     class</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt; &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.936269         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.669030         2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.397051         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.859872         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.382483         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.874035         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.283290         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.566123         2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 5 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -267,10 +264,10 @@ groups. To add to the existing groups, use .add = TRUE.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score     class</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt; &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.936269         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.669030         2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.397051         1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.859872         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.382483         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.874035         2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.283290         1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.566123         2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 5 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
