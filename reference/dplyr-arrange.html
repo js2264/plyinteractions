@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">plyinteractions</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.99.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.99.5</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +29,9 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/process_pairs.html">Hi-C arithmetic with plyinteractions</a>
   </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -101,11 +104,11 @@ Use dplyr::desc() to sort a variable in descending order.</data-masking></p></dd
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [5]      chr5      5-10       * ---      chr5      1-10       * |  TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score        gc</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt; &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  14.34735 0.0692641</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  35.80750 0.7451790</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  88.20639 0.4418280</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]   3.52689 0.2619752</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]  99.78098 0.1825624</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]   83.9845 0.9652666</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]   69.6296 0.0665908</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]   63.8553 0.7253241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]   10.2721 0.7090260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]   81.7661 0.0257261</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 9 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 5 sequences from an unspecified genome; no seqlengths</span>
@@ -118,18 +121,18 @@ Use dplyr::desc() to sort a variable in descending order.</data-masking></p></dd
 <span class="r-out co"><span class="r-pr">#&gt;</span> GInteractions object with 5 interactions and 3 metadata columns:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |   cis</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;Rle&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]      chr1      1-10       * ---      chr1      1-10       * |  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]      chr5      5-10       * ---      chr5      1-10       * |  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]      chr5      5-10       * ---      chr5      1-10       * |  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]      chr1      2-10       * ---      chr2      1-10       * | FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [3]      chr4      4-10       * ---      chr4      1-10       * |  TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr3      3-10       * ---      chr3      1-10       * |  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]      chr1      2-10       * ---      chr2      1-10       * | FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]      chr1      1-10       * ---      chr1      1-10       * |  TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score        gc</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt; &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  14.34735 0.0692641</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  99.78098 0.1825624</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]   3.52689 0.2619752</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  88.20639 0.4418280</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]  35.80750 0.7451790</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]   81.7661 0.0257261</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]   69.6296 0.0665908</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]   10.2721 0.7090260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]   63.8553 0.7253241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]   83.9845 0.9652666</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 9 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 5 sequences from an unspecified genome; no seqlengths</span>
@@ -149,11 +152,11 @@ Use dplyr::desc() to sort a variable in descending order.</data-masking></p></dd
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [5]      chr5      5-10       * ---      chr5      1-10       * |  TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score        gc</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt; &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  35.80750 0.7451790</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  14.34735 0.0692641</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  88.20639 0.4418280</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]   3.52689 0.2619752</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]  99.78098 0.1825624</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]   69.6296 0.0665908</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]   83.9845 0.9652666</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]   63.8553 0.7253241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]   10.2721 0.7090260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]   81.7661 0.0257261</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 9 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 5 sequences from an unspecified genome; no seqlengths</span>
@@ -175,11 +178,11 @@ Use dplyr::desc() to sort a variable in descending order.</data-masking></p></dd
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [5]      chr4      4-10       * ---      chr4      1-10       * |  TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score        gc      rep</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt; &lt;numeric&gt; &lt;factor&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  14.34735 0.0692641     rep1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  88.20639 0.4418280     rep1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  99.78098 0.1825624     rep1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  35.80750 0.7451790     rep2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]   3.52689 0.2619752     rep2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]   83.9845 0.9652666     rep1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]   63.8553 0.7253241     rep1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]   81.7661 0.0257261     rep1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]   69.6296 0.0665908     rep2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]   10.2721 0.7090260     rep2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 9 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 5 sequences from an unspecified genome; no seqlengths</span>
@@ -196,16 +199,16 @@ Use dplyr::desc() to sort a variable in descending order.</data-masking></p></dd
 <span class="r-out co"><span class="r-pr">#&gt;</span>           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;Rle&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [1]      chr4      4-10       * ---      chr4      1-10       * |  TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [2]      chr1      2-10       * ---      chr2      1-10       * | FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]      chr1      1-10       * ---      chr1      1-10       * |  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr3      3-10       * ---      chr3      1-10       * |  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]      chr5      5-10       * ---      chr5      1-10       * |  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]      chr3      3-10       * ---      chr3      1-10       * |  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr5      5-10       * ---      chr5      1-10       * |  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]      chr1      1-10       * ---      chr1      1-10       * |  TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score        gc      rep</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt; &lt;numeric&gt; &lt;factor&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]   3.52689 0.2619752     rep2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  35.80750 0.7451790     rep2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  14.34735 0.0692641     rep1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  88.20639 0.4418280     rep1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]  99.78098 0.1825624     rep1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]   10.2721 0.7090260     rep2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]   69.6296 0.0665908     rep2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]   63.8553 0.7253241     rep1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]   81.7661 0.0257261     rep1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [5]   83.9845 0.9652666     rep1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 9 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 5 sequences from an unspecified genome; no seqlengths</span>
