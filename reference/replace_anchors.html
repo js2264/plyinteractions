@@ -107,7 +107,10 @@ the GInteractions is already pinned to a specific set of anchors.</p></dd>
 <span class="r-in"><span><span class="st">chr1 11 20 chr1 51 55</span></span></span>
 <span class="r-in"><span><span class="st">chr1 11 30 chr1 51 55</span></span></span>
 <span class="r-in"><span><span class="st">chr1 11 30 chr2 51 60"</span>,</span></span>
-<span class="r-in"><span>col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"seqnames1"</span>, <span class="st">"start1"</span>, <span class="st">"end1"</span>, <span class="st">"seqnames2"</span>, <span class="st">"start2"</span>, <span class="st">"end2"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span></span>
+<span class="r-in"><span>col.names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"seqnames1"</span>, <span class="st">"start1"</span>, <span class="st">"end1"</span>, </span></span>
+<span class="r-in"><span>    <span class="st">"seqnames2"</span>, <span class="st">"start2"</span>, <span class="st">"end2"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span> <span class="op">|&gt;</span> </span></span>
 <span class="r-in"><span>  <span class="fu"><a href="ginteractions-construct.html">as_ginteractions</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'cis'</span>, <span class="st">'cis'</span>, <span class="st">'cis'</span>, <span class="st">'trans'</span><span class="op">)</span>, score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
@@ -125,10 +128,10 @@ the GInteractions is already pinned to a specific set of anchors.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr1     11-30       * ---      chr1     11-30       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.627030</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.278069</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.430336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.351654</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.208673</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.590904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.578556</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.192841</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 2 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -143,10 +146,10 @@ the GInteractions is already pinned to a specific set of anchors.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr2     51-60       * ---      chr2     51-60       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.627030</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.278069</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.430336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.351654</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.208673</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.590904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.578556</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.192841</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 3 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -163,10 +166,10 @@ the GInteractions is already pinned to a specific set of anchors.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr1       4-5       * ---      chr2     51-60       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.627030</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.278069</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.430336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.351654</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.208673</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.590904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.578556</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.192841</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 7 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -186,10 +189,10 @@ the GInteractions is already pinned to a specific set of anchors.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.627030</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.278069</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.430336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.351654</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.208673</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.590904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.578556</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.192841</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 5 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -204,10 +207,10 @@ the GInteractions is already pinned to a specific set of anchors.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr2     51-60       * ---      chr2     51-60       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.627030</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.278069</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.430336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.351654</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.208673</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.590904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.578556</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.192841</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 3 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
@@ -231,10 +234,10 @@ the GInteractions is already pinned to a specific set of anchors.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   [4]      chr1       4-5       * ---      chr2       4-5       * |       trans</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           score</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.627030</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.278069</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.430336</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.351654</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1]  0.208673</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [2]  0.590904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [3]  0.578556</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [4]  0.192841</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   -------</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   regions: 8 ranges and 0 metadata columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span>
