@@ -56,3 +56,6 @@ reference:
   contents: 
   - ginteractions-anchor
   - replace_anchors
+- title: "Exporting GInteractions"
+  contents: 
+  - ginteractions-export
