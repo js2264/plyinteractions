@@ -7,12 +7,14 @@
 #' (https://bedtools.readthedocs.io/en/latest/content/general-usage.html#bedpe-format)
 #' for more details. 
 #'
+#' @name ginteractions-export
+#' 
 #' @param x a GInteractions object.
 #' @param file path to a `.bedpe` or `.pairs` file to save the genomic interactions.
+#' @param scores Name of column to extract scores from. 
+#' @param seqlengths Named vector indicating the chromosome sizes.
 #'
 #' @return TRUE
-#'
-#' @rdname ginteractions-export
 #' 
 #' @examples
 #' gi <- read.table(text = "
@@ -25,7 +27,10 @@
 #' 
 #' write_bedpe(gi, 'gi.bedpe')
 #' write_pairs(gi, 'gi.pairs')
+NULL
 
+#' @rdname ginteractions-export
+#' @export
 write_bedpe <- function(x, file, scores = NULL) {
         
     tab <- x |> 
@@ -59,7 +64,9 @@ write_bedpe <- function(x, file, scores = NULL) {
     TRUE
 }
 
-write_pairs <- function(x, file, seqlengths = GenomeInfoDb::seqlengths(x), scores = NULL) {
+#' @rdname ginteractions-export
+#' @export
+write_pairs <- function(x, file, seqlengths = GenomeInfoDb::seqlengths(x)) {
     
     if (any(is.na(seqlengths))) {
         message("No `seqlengths` provided. The `chromsizes` will be inferred from the interactions and will most likely be inaccurate.")
@@ -91,7 +98,7 @@ write_pairs <- function(x, file, seqlengths = GenomeInfoDb::seqlengths(x), score
     chromsizes <- lapply(seq_along(seqlengths), function(.i) {
         .x <- seqlengths[.i]
         .y <- names(seqlengths)[.i]
-        stringr::str_glue("#chromsize: {.y} {.x}")
+        paste("#chromsize: ", .y, .x, sep = " ")
     }) |> unlist()
 
     header <- c("## pairs format v1.0", chromsizes, "#columns: readID chr1 pos1 chr2 pos2 strand1 strand2")
