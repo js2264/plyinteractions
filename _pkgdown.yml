@@ -8,7 +8,6 @@ home:
 authors:
     Jacques Serizay:
         href: https://jserizay.com
-    Eric Scott Davis:
         
 development:
     mode: auto
@@ -28,7 +27,7 @@ reference:
   contents: 
   - as_ginteractions
   - ginteractions-getters
-  - pair-granges
+  - pair_granges
 - title: "`dplyr` core verbs"
   contents: 
   - starts_with("dplyr-")
@@ -47,7 +46,7 @@ reference:
 - title: "Enriching GInteractions"
   contents: 
   - ginteractions-annotate
-  - add-pairdist
+  - add_pairdist
 - title: "Pinning GInteractions"
   contents: 
   - pin
