@@ -52,6 +52,7 @@ RoxygenNote: 7.3.1
 Collate: 
     'AllGenerics.R'
     'AllClasses.R'
+    'add_pairdist.R'
     'anchor.R'
     'annotate.R'
     'arrange.R'
@@ -79,6 +80,7 @@ Collate:
     'methods-PinnedGInteractions.R'
     'methods-show.R'
     'mutate.R'
+    'pair-granges.R'
     'pin.R'
     'plyinteractions.R'
     'reexports-dplyr.R'

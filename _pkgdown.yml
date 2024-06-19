@@ -28,6 +28,7 @@ reference:
   contents: 
   - as_ginteractions
   - ginteractions-getters
+  - pair-granges
 - title: "`dplyr` core verbs"
   contents: 
   - starts_with("dplyr-")
@@ -43,9 +44,10 @@ reference:
   - ginteractions-count-overlaps
   - ginteractions-filter-overlaps
   - ginteractions-join-overlap-left
-- title: "Annotating GInteractions"
+- title: "Enriching GInteractions"
   contents: 
   - ginteractions-annotate
+  - add-pairdist
 - title: "Pinning GInteractions"
   contents: 
   - pin
