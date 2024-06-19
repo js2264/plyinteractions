@@ -27,6 +27,6 @@
 pair_granges <- function(x) {
 
     combs <- combn(length(x), 2)
-    InteractionSet::GInteractions(combs[1,], combs[2,], gr)
+    InteractionSet::GInteractions(combs[1,], combs[2,], x)
 
 }

@@ -1,4 +1,5 @@
 #' @rdname reexports
+#' @importFrom plyranges as_granges
 #' @importFrom plyranges anchor
 #' @export
 plyranges::anchor
