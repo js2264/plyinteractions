@@ -32,14 +32,14 @@ setReplaceMethod("second", "GInteractions", function(x, value) {
 #' @rdname ginteractions-setters
 setMethod("set_seqnames1", 
     signature("GInteractions", "factor"), function(x, value) {
-        GenomeInfoDb::seqnames(S4Vectors::first(x)) <- value
+        Seqinfo::seqnames(S4Vectors::first(x)) <- value
         x
     }
 )
 #' @rdname ginteractions-setters
 setMethod("set_seqnames2", 
     signature("GInteractions", "factor"), function(x, value) {
-        GenomeInfoDb::seqnames(S4Vectors::second(x)) <- value
+        Seqinfo::seqnames(S4Vectors::second(x)) <- value
         x
     }
 )

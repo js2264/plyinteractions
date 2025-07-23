@@ -8,7 +8,7 @@
 \usage{
 write_bedpe(x, file, scores = NULL)
 
-write_pairs(x, file, seqlengths = GenomeInfoDb::seqlengths(x))
+write_pairs(x, file, seqlengths = Seqinfo::seqlengths(x))
 }
 \arguments{
 \item{x}{a GInteractions object.}

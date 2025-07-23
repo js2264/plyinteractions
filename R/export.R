@@ -66,7 +66,7 @@ write_bedpe <- function(x, file, scores = NULL) {
 
 #' @rdname ginteractions-export
 #' @export
-write_pairs <- function(x, file, seqlengths = GenomeInfoDb::seqlengths(x)) {
+write_pairs <- function(x, file, seqlengths = Seqinfo::seqlengths(x)) {
     
     if (any(is.na(seqlengths))) {
         message("No `seqlengths` provided. The `chromsizes` will be inferred from the interactions and will most likely be inaccurate.")

@@ -49,16 +49,16 @@ setMethod("anchors1", signature("GInteractions"), function(x) {
 setMethod("anchors2", signature("GInteractions"), function(x) {
     S4Vectors::second(x)
 })
-#' @importFrom GenomeInfoDb seqnames
+#' @importFrom Seqinfo seqnames
 #' @rdname ginteractions-getters
 #' @export
 setMethod("seqnames1", signature("GInteractions"), function(x) {
-    GenomeInfoDb::seqnames(anchors1(x))
+    Seqinfo::seqnames(anchors1(x))
 })
 #' @rdname ginteractions-getters
 #' @export
 setMethod("seqnames2", signature("GInteractions"), function(x) {
-    GenomeInfoDb::seqnames(anchors2(x))
+    Seqinfo::seqnames(anchors2(x))
 })
 #' @importFrom BiocGenerics start
 #' @rdname ginteractions-getters

@@ -5,7 +5,7 @@ setMethod("show", "GInteractions", function(object){
     )
 })
 
-#' @importFrom GenomeInfoDb seqinfo
+#' @importFrom Seqinfo seqinfo
 .showGInteractions <- function(
     x, margin="", print.seqinfo=FALSE, print.classinfo=FALSE
 ) {
@@ -52,7 +52,7 @@ setMethod("show", "GInteractions", function(object){
         )
         cat(
             margin, "seqinfo: ", 
-            summary(GenomeInfoDb::seqinfo(x)), "\n", sep=""
+            summary(Seqinfo::seqinfo(x)), "\n", sep=""
         )
     }
 }
@@ -81,12 +81,12 @@ setMethod("show", "GInteractions", function(object){
     ans
 }
 
-#' @importFrom GenomeInfoDb seqnames
+#' @importFrom Seqinfo seqnames
 #' @importFrom IRanges ranges
 #' @importFrom BiocGenerics strand
 .pasteAnchor <- function(x, append) {
     out <- cbind(
-        as.character(GenomeInfoDb::seqnames(x)), 
+        as.character(Seqinfo::seqnames(x)), 
         S4Vectors::showAsCell(IRanges::ranges(x)), 
         as.character(BiocGenerics::strand(x))
     )
