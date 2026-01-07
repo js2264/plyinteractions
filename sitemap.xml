@@ -7,10 +7,7 @@
 <url><loc>/authors.html</loc></url>
 <url><loc>/index.html</loc></url>
 <url><loc>/news/index.html</loc></url>
-<url><loc>/reference/GM12878_HiCCUPS.html</loc></url>
 <url><loc>/reference/add-pairdist.html</loc></url>
-<url><loc>/reference/ce10_ARCC.html</loc></url>
-<url><loc>/reference/ce10_REs.html</loc></url>
 <url><loc>/reference/delegating-ginteractions-methods.html</loc></url>
 <url><loc>/reference/dplyr-arrange.html</loc></url>
 <url><loc>/reference/dplyr-count.html</loc></url>
@@ -35,11 +32,12 @@
 <url><loc>/reference/group-group_data.html</loc></url>
 <url><loc>/reference/index.html</loc></url>
 <url><loc>/reference/pair-granges.html</loc></url>
+<url><loc>/reference/plyinteractions-data.html</loc></url>
+<url><loc>/reference/plyinteractions-flank.html</loc></url>
 <url><loc>/reference/plyinteractions-package.html</loc></url>
-<url><loc>/reference/plyranges-flank.html</loc></url>
-<url><loc>/reference/plyranges-shift.html</loc></url>
+<url><loc>/reference/plyinteractions-shift.html</loc></url>
 <url><loc>/reference/plyranges-stretch.html</loc></url>
-<url><loc>/reference/reexports.html</loc></url>
 <url><loc>/reference/replace_anchors.html</loc></url>
+<url><loc>/reference/show-GInteractions.html</loc></url>
 </urlset>
 

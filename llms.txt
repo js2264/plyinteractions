@@ -1,0 +1,288 @@
+# plyinteractions
+
+`plyinteractions` provides a consistent interface for importing genomic
+interactions from `pairs` and `bedpe` files into `GInteractions` objects
+in `R` and for manipulating them using a tidy grammar.
+
+[`plyranges`](https://www.bioconductor.org/packages/release/bioc/html/plyranges.html)
+operates on genomic ranges (e.g. implemented as `GRanges` objects in
+`Bioconductor`) and introduces a tidy grammar for manipulating them.
+Genomic interactions (implemented as `GInteractions` objects in
+`Bioconductor`) are more complex than genomic ranges in that each
+observation (row) corresponds to *a pair of two genomic ranges*, each
+one with its own metadata. `plyinteractions` extends `plyranges` syntax
+to manipulate genomic interactions in `R` using `dplyr` verbs and tidy
+operations.
+
+The grammar of tidy genomic data transformation defined in
+[`plyranges`](https://www.bioconductor.org/packages/release/bioc/html/plyranges.html)
+and available for `GInteractions` currently supports:
+
+- `dplyr` verbs (for `GInteractions` and `GroupedGInteractions`):
+
+  - Group genomic interactions with `group_by`;
+  - Summarize grouped genomic interactions with `summarize`;
+  - Tally/count grouped genomic interactions with `tally` and `count`;
+  - Modify genomic interactions with `mutate`;
+  - Subset genomic interactions with `filter` using
+    [`<data-masking>`](https://rlang.r-lib.org/reference/args_data_masking.html)
+    and logical expressions;
+  - Pick out any columns from the associated metadata with `select`
+    using [`<tidy-select>`
+    arguments](https://dplyr.tidyverse.org/reference/dplyr_tidy_select.html);
+  - Subset using indices with `slice`;
+  - Order genomic interactions with `arrange` using
+    categorical/numerical variables.
+
+- `plyranges` verbs (for `PinnedGInteractions` and
+  `AnchoredPinnedGInteractions`):
+
+  - Stretch specific anchors of genomic interactions to a given width
+    with `stretch`;
+  - `anchor_*` functions to control how stretching is performed;
+  - Shift specific anchors of genomic interactions with `shift`;
+  - Obtain flanking `GRanges` from specific anchors of genomic
+    interactions with `flank`.
+
+***Note:*** In the genomic interaction field, the *“anchor”* term
+typically refers to the two genomic loci brought together into an
+*interaction*. In `plyranges`, the term `anchor` is used to specify
+which “part” of a genomic locus is fixed (e.g. “5p”, 3p”, “center”) and,
+incidently, which one can be modified by `plyranges` verbs.
+
+For more details on `GInteractions` “anchors” vs. `plyranges`
+`anchor`ing system, read [this
+section](%5B#pinned-and-anchored-ginteractions%5D(https://tidyomics.github.io/plyinteractions/articles/plyinteractions.html#pinned-and-anchored-ginteractions))
+from our vignette.
+
+- Overlapping operations (for `GInteractions` and
+  `PinnedGInteractions`):
+
+  - `find_overlaps`
+  - `count_overlaps`
+  - `filter_by_overlaps` and `filter_by_non_overlaps`
+  - `join_overlap_left`
+
+## Installation
+
+`plyinteractions` can be currently be installed from GitHub:
+
+``` r
+
+BiocManager::install("tidyomics/plyinteractions")
+```
+
+## Using `plyinteractions`
+
+Read [`vignette("plyinteractions")`](articles/plyinteractions.md) for
+more details.
+
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of
+Conduct](http://bioconductor.org/about/code-of-conduct/). By
+contributing to this project, you agree to abide by its terms.
+
+## Acknowledgments
+
+`plyinteractions` package is heavily based on `plyranges`. It adapts a
+number of functions and methods defined in that package, and would not
+have been developed without the seminal work from Stuart Lee, Dianne
+Cook and Michael Lawrence:
+
+- Lee, Stuart, Dianne Cook, and Michael Lawrence. 2019. “Plyranges: A
+  Grammar of Genomic Data Transformation.” Genome Biology 20 (1): 4.
+  <https://doi.org/10.1186/s13059-018-1597-8>.
+
+This package is largely inspired by the `tidyverse`:
+
+- Wickham H, François R, Henry L, Müller K, Vaughan D (2023). *dplyr: A
+  Grammar of Data Manipulation*. R package version 1.1.2,
+  <https://CRAN.R-project.org/package=dplyr>.
+- Henry L, Wickham H (2023). *rlang: Functions for Base Types and Core R
+  and ‘Tidyverse’ Features*. R package version 1.1.1,
+  <https://CRAN.R-project.org/package=rlang>.
+
+# Package index
+
+## About plyinteractions
+
+- [`plyinteractions-package`](plyinteractions-package.md)
+  [`plyinteractions`](plyinteractions-package.md) : plyinteractions:
+  Extending tidyomics verbs to genomic interactions
+
+## Constructors
+
+- [`as_ginteractions()`](ginteractions-construct.md) : Construct a
+  GInteractions object from a tibble, DataFrame or data.frame
+- [`anchors1()`](ginteractions-getters.md)
+  [`anchors2()`](ginteractions-getters.md)
+  [`seqnames1()`](ginteractions-getters.md)
+  [`seqnames2()`](ginteractions-getters.md)
+  [`start1()`](ginteractions-getters.md)
+  [`start2()`](ginteractions-getters.md)
+  [`end1()`](ginteractions-getters.md)
+  [`end2()`](ginteractions-getters.md)
+  [`width1()`](ginteractions-getters.md)
+  [`width2()`](ginteractions-getters.md)
+  [`strand1()`](ginteractions-getters.md)
+  [`strand2()`](ginteractions-getters.md)
+  [`ranges1()`](ginteractions-getters.md)
+  [`ranges2()`](ginteractions-getters.md)
+  [`` `$`( ``*`<GInteractions>`*`)`](ginteractions-getters.md) :
+  Enhanced GInteractions getters
+- [`pair_granges()`](pair-granges.md) : Pairwise combination of a
+  GRanges object
+
+## `dplyr` core verbs
+
+- [`arrange(`*`<GInteractions>`*`)`](dplyr-arrange.md) : Arrange a
+  GInteractions by a column
+
+- [`tally(`*`<GroupedGInteractions>`*`)`](dplyr-count.md)
+  [`count(`*`<GroupedGInteractions>`*`)`](dplyr-count.md)
+  [`count(`*`<GInteractions>`*`)`](dplyr-count.md) : Count or tally
+  GInteractions per group
+
+- [`filter(`*`<GInteractions>`*`)`](dplyr-filter.md) :
+
+  Subset a GInteractions with tidyverse-like `filter`
+
+- [`group_by(`*`<GInteractions>`*`)`](dplyr-group_by.md)
+  [`group_by(`*`<DelegatingGInteractions>`*`)`](dplyr-group_by.md)
+  [`ungroup(`*`<GroupedGInteractions>`*`)`](dplyr-group_by.md) : Group
+  GInteractions by columns
+
+- [`mutate(`*`<GInteractions>`*`)`](dplyr-mutate.md) : Mutate columns
+  from a GInteractions object
+
+- [`rename(`*`<GInteractions>`*`)`](dplyr-rename.md) :
+
+  Rename columns from a GInteractions with tidyverse-like `rename`
+
+- [`select(`*`<GInteractions>`*`)`](dplyr-select.md) : Select columns
+  within GInteractions metadata columns
+
+- [`slice(`*`<GInteractions>`*`)`](dplyr-slice.md) : Slice a
+  GInteractions rows by their index
+
+- [`summarise(`*`<GroupedGInteractions>`*`)`](dplyr-summarize.md)
+  [`summarize(`*`<GroupedGInteractions>`*`)`](dplyr-summarize.md) :
+  Summarize GInteractions per group
+
+## `dplyr` group helpers
+
+- [`group_data(`*`<GroupedGInteractions>`*`)`](group-group_data.md)
+  [`group_keys(`*`<GroupedGInteractions>`*`)`](group-group_data.md)
+  [`group_indices(`*`<GroupedGInteractions>`*`)`](group-group_data.md)
+  [`group_vars(`*`<GInteractions>`*`)`](group-group_data.md)
+  [`group_vars(`*`<GroupedGInteractions>`*`)`](group-group_data.md)
+  [`groups(`*`<GroupedGInteractions>`*`)`](group-group_data.md)
+  [`group_size(`*`<GroupedGInteractions>`*`)`](group-group_data.md)
+  [`n_groups(`*`<GroupedGInteractions>`*`)`](group-group_data.md) :
+  GInteractions grouping metadata
+
+## `plyranges` verbs
+
+- [`flank_downstream()`](plyinteractions-flank.md)
+  [`flank_left()`](plyinteractions-flank.md)
+  [`flank_upstream()`](plyinteractions-flank.md)
+  [`flank_right()`](plyinteractions-flank.md) : Generate flanking
+  regions from pinned anchors of a GInteractions object
+- [`shift_downstream()`](plyinteractions-shift.md)
+  [`shift_upstream()`](plyinteractions-shift.md)
+  [`shift_right()`](plyinteractions-shift.md)
+  [`shift_left()`](plyinteractions-shift.md) : Shift pinned anchors of a
+  GInteractions object with plyinteractions
+- [`stretch(`*`<AnchoredPinnedGInteractions>`*`)`](plyranges-stretch.md)
+  [`stretch(`*`<PinnedGInteractions>`*`)`](plyranges-stretch.md) :
+  Stretch pinned anchors of a GInteractions object with plyranges
+
+## Overlapping GInteractions
+
+- [`find_overlaps(`*`<PinnedGInteractions>`*`)`](ginteractions-find-overlaps.md)
+  [`find_overlaps(`*`<GInteractions>`*`)`](ginteractions-find-overlaps.md)
+  [`find_overlaps_directed(`*`<PinnedGInteractions>`*`)`](ginteractions-find-overlaps.md)
+  [`find_overlaps_directed(`*`<GInteractions>`*`)`](ginteractions-find-overlaps.md)
+  : Find overlaps between a query GInteractions and a GRanges
+- [`count_overlaps(`*`<PinnedGInteractions>`*`)`](ginteractions-count-overlaps.md)
+  [`count_overlaps(`*`<GInteractions>`*`)`](ginteractions-count-overlaps.md)
+  [`count_overlaps_directed(`*`<PinnedGInteractions>`*`)`](ginteractions-count-overlaps.md)
+  [`count_overlaps_directed(`*`<GInteractions>`*`)`](ginteractions-count-overlaps.md)
+  : Count overlaps between a query GInteractions and a GRanges
+- [`filter_by_overlaps(`*`<PinnedGInteractions>`*`)`](ginteractions-filter-overlaps.md)
+  [`filter_by_overlaps(`*`<GInteractions>`*`)`](ginteractions-filter-overlaps.md)
+  [`filter_by_non_overlaps(`*`<PinnedGInteractions>`*`)`](ginteractions-filter-overlaps.md)
+  [`filter_by_non_overlaps(`*`<GInteractions>`*`)`](ginteractions-filter-overlaps.md)
+  : Filter GInteractions overlapping with a GRanges
+- [`join_overlap_left(`*`<PinnedGInteractions>`*`)`](ginteractions-join-overlap-left.md)
+  [`join_overlap_left(`*`<GInteractions>`*`)`](ginteractions-join-overlap-left.md)
+  [`join_overlap_left_directed(`*`<PinnedGInteractions>`*`)`](ginteractions-join-overlap-left.md)
+  [`join_overlap_left_directed(`*`<GInteractions>`*`)`](ginteractions-join-overlap-left.md)
+  : Join overlaps between a query GInteractions and a GRanges
+
+## Enriching GInteractions
+
+- [`annotate()`](ginteractions-annotate.md)
+  [`annotate_directed()`](ginteractions-annotate.md) : Annotate both
+  anchors of a GInteractions
+- [`add_pairdist()`](add-pairdist.md) : Appends distance between
+  interaction anchors
+
+## Pinning GInteractions
+
+- [`pin()`](ginteractions-pin.md) [`pin_by()`](ginteractions-pin.md)
+  [`pinned_anchors()`](ginteractions-pin.md)
+  [`unpin()`](ginteractions-pin.md)
+  [`pin_first()`](ginteractions-pin.md)
+  [`pin_second()`](ginteractions-pin.md)
+  [`pin_anchors1()`](ginteractions-pin.md)
+  [`pin_anchors2()`](ginteractions-pin.md) : Pin GInteractions by
+  anchors set (anchors1 or anchors2).
+
+## Anchoring GInteractions
+
+- [`anchor(`*`<AnchoredPinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`unanchor(`*`<AnchoredPinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`anchor_start(`*`<PinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`anchor_end(`*`<PinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`anchor_center(`*`<PinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`anchor_3p(`*`<PinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`anchor_5p(`*`<PinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`anchor_start(`*`<AnchoredPinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`anchor_end(`*`<AnchoredPinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`anchor_center(`*`<AnchoredPinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`anchor_3p(`*`<AnchoredPinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  [`anchor_5p(`*`<AnchoredPinnedGInteractions>`*`)`](ginteractions-anchor.md)
+  : Manage GInteractions anchors with plyranges
+- [`replace_anchors()`](replace_anchors.md) : Replace anchors of a
+  GInteractions
+
+## Exporting GInteractions
+
+- [`write_bedpe()`](ginteractions-export.md)
+  [`write_pairs()`](ginteractions-export.md) :
+
+  Export GInteractions as `bedpe` or `pairs` files
+
+## Misc
+
+- [`show-GInteractions`](show-GInteractions.md)
+  [`show,GInteractions-method`](show-GInteractions.md)
+  [`show,AnchoredPinnedGInteractions-method`](show-GInteractions.md)
+  [`show,GroupedGInteractions-method`](show-GInteractions.md)
+  [`show,PinnedGInteractions-method`](show-GInteractions.md) :
+
+  show method for `GInteractions` objects
+
+## Toy datasets
+
+- [`GM12878_HiCCUPS`](plyinteractions-data.md) : Data files provided in
+  the plyinteractions package
+
+# Articles
+
+### All vignettes
+
+- [plyinteractions](plyinteractions.md):
+- [Hi-C arithmetic with plyinteractions](process_pairs.md):
