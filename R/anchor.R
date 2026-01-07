@@ -9,6 +9,8 @@
 #' @name ginteractions-anchor
 #' @rdname ginteractions-anchor
 #'
+#' @importFrom plyranges anchor unanchor anchor_start anchor_end anchor_center
+#' @importFrom plyranges anchor_3p anchor_5p
 #' @examples
 #' gi <- read.table(text = "
 #' chr1 11 20 chr1 21 30 + +
@@ -22,13 +24,19 @@
 #'   as_ginteractions() |> 
 #'   mutate(score = runif(4), type = c('cis', 'cis', 'cis', 'trans'))
 #' 
+#' gi
+#' 
 #' ####################################################################
 #' # 1. Anchoring pinned genomic interactions with plyranges
 #' ####################################################################
 #' 
 #' gi |> pin_by("second") |> anchor_end()
 #' 
-#' @importFrom plyranges anchor
+#' gi |> pin_by("first") |> anchor_start()
+#' 
+#' gi |> 
+#'   pin_by("first") |> anchor_center() |> stretch(4) |> 
+#'   pin_by("second") |> anchor_3p() |> stretch(-2)
 NULL
 
 .is_pinned <- function(x) {

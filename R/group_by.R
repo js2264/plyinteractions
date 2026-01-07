@@ -9,6 +9,7 @@
 #' `(Anchored)PinnedGInteractions` object is grouped, both anchoring and 
 #' pinning are dropped. 
 #'
+#' @importFrom dplyr group_by
 #' @importFrom tidyselect eval_select
 #' @importFrom rlang syms
 #' @importFrom methods new

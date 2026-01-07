@@ -1,4 +1,5 @@
 #' @rdname replace_anchors
+#' @include zzz.R
 #' @export
 setGeneric("replace_anchors", 
     function(x, id, value) standardGeneric("replace_anchors")

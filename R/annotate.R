@@ -27,7 +27,7 @@
 #' ) |> as_ginteractions() 
 #' 
 #' gr <- GenomicRanges::GRanges(c("chr1:20-30:+", "chr2:55-65:+")) |>
-#'     plyranges::mutate(id = 1:2)
+#'     mutate(id = 1:2)
 #' 
 #' annotate(gi, gr, by = 'id')
 #' 
@@ -51,7 +51,7 @@
 #' ) |> 
 #'     GenomicRanges::tileGenome(tilewidth = 10000) |> 
 #'     unlist() |> 
-#'     plyranges::mutate(binID = seq_len(plyranges::n()))
+#'     mutate(binID = seq_len(plyranges::n()))
 #' 
 #' annotate(loops, genomic_bins, by = 'binID') |> 
 #'     select(starts_with('binID'))
@@ -65,7 +65,7 @@
 #' annotate(ce10_ARCC, ce10_REs, by = 'annot') |> 
 #'    count(annot.1, annot.2) |> 
 #'    as.data.frame() |> 
-#'    dplyr::arrange(desc(n))
+#'    arrange(desc(n))
 NULL
 
 #' @rdname ginteractions-annotate
@@ -97,10 +97,10 @@ setMethod(
         }
         x <- x |> pin_by("first") 
         x <- x |> join_overlap_left(y) 
-        x <- x |> rename(!!col1 := !!by) 
+        x <- x |> dplyr::rename(!!col1 := !!by) 
         x <- x |> pin_by("second") 
         x <- x |> join_overlap_left(y) 
-        x <- x |> rename(!!col2 := !!by)
+        x <- x |> dplyr::rename(!!col2 := !!by)
         x
     
     }
@@ -135,10 +135,10 @@ setMethod(
         }
         x <- x |> pin_by("first") 
         x <- x |> join_overlap_left_directed(y) 
-        x <- x |> rename(!!col1 := !!by) 
+        x <- x |> dplyr::rename(!!col1 := !!by) 
         x <- x |> pin_by("second") 
         x <- x |> join_overlap_left_directed(y) 
-        x <- x |> rename(!!col2 := !!by)
+        x <- x |> dplyr::rename(!!col2 := !!by)
         x
     
     }

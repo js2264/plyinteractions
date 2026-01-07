@@ -3,6 +3,7 @@
 #' @name dplyr-rename
 #' @rdname dplyr-rename
 #' 
+#' @importFrom dplyr rename
 #' @importFrom tidyselect eval_rename
 #' 
 #' @param .data a GInteractions object

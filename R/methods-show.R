@@ -1,4 +1,28 @@
+#' @title show method for `GInteractions` objects
+#' 
+#' @name show-GInteractions
+#' @aliases show,GInteractions-method
+#' @aliases show,AnchoredPinnedGInteractions-method
+#' @aliases show,GroupedGInteractions-method
+#' @aliases show,PinnedGInteractions-method
+#' 
+#' @param object a `(Anchored/Pinned/Grouped)GInteractions` object
+#' @return `Prints a message to the console describing
+#'   the contents of a `GInteractions` object.
+#' @examples
+#' pairsf <- system.file('extdata', 'pairs.gz', package = 'plyinteractions')
+#' pairs <- read.table(pairsf, comment.char = '#', header = FALSE)
+#' pairs |> 
+#'   as_ginteractions(
+#'     seqnames1 = V2, start1 = V3, width1 = 1, strand1 = V6, 
+#'     seqnames2 = V4, start2 = V5, width2 = 1, strand2 = V7,
+#'     starts.in.df.are.0based = TRUE
+#'   )
+NULL
+
 ## Ripped from InteractionSet to add the strand{12} to the print
+#' @method show GInteractions
+#' @export
 setMethod("show", "GInteractions", function(object){
     .showGInteractions(
         object, margin="  ", print.seqinfo=TRUE, print.classinfo=TRUE

@@ -7,6 +7,7 @@
 #'
 #' @return a GInteractions object.
 #'
+#' @importFrom dplyr select
 #' @importFrom tidyselect eval_select
 #' @importFrom rlang syms
 #' 

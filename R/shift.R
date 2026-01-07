@@ -1,4 +1,4 @@
-#' Shift pinned anchors of a GInteractions object with plyranges
+#' Shift pinned anchors of a GInteractions object with plyinteractions
 #'  
 #' @param x a PinnedGInteractions object
 #' @param shift The amount to move the genomic interval in the Ranges object 
@@ -6,8 +6,8 @@
 #' the same length as x.
 #' @return A PinnedGInteractions object
 #' 
-#' @name plyranges-shift
-#' @rdname plyranges-shift
+#' @name plyinteractions-shift
+#' @rdname plyinteractions-shift
 #'
 #' @examples
 #' gi <- read.table(text = "
@@ -45,14 +45,14 @@ NULL
 #' @importFrom plyranges shift_upstream
 #' @importFrom plyranges shift_right
 #' @importFrom plyranges shift_left
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_downstream <- function(x, shift) UseMethod("shift_downstream")
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_downstream.Ranges <- function(x, shift) 
     plyranges::shift_downstream(x, shift)
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_downstream.PinnedGInteractions <- function(x, shift) {
     pinned <- pinned_anchors(x) 
@@ -61,13 +61,13 @@ shift_downstream.PinnedGInteractions <- function(x, shift) {
     x
 }
 
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_upstream <- function(x, shift) UseMethod("shift_upstream")
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_upstream.Ranges <- function(x, shift) plyranges::shift_upstream(x, shift)
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_upstream.PinnedGInteractions <- function(x, shift) {
     pinned <- pinned_anchors(x) 
@@ -76,13 +76,13 @@ shift_upstream.PinnedGInteractions <- function(x, shift) {
     x
 }
 
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_right <- function(x, shift) UseMethod("shift_right")
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_right.Ranges <- function(x, shift) plyranges::shift_right(x, shift)
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_right.PinnedGInteractions <- function(x, shift) {
     pinned <- pinned_anchors(x) 
@@ -91,13 +91,13 @@ shift_right.PinnedGInteractions <- function(x, shift) {
     x
 }
 
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_left <- function(x, shift) UseMethod("shift_left")
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_left.Ranges <- function(x, shift) plyranges::shift_left(x, shift)
-#' @rdname plyranges-shift
+#' @rdname plyinteractions-shift
 #' @export
 shift_left.PinnedGInteractions <- function(x, shift) {
     pinned <- pinned_anchors(x) 
