@@ -528,7 +528,7 @@ ggplot(dat, aes(x = binned_s, y = Ps)) +
     #>  pillar                         1.11.1    2025-09-17 [2] CRAN (R 4.6.0)
     #>  pkgconfig                      2.0.3     2019-09-22 [2] CRAN (R 4.6.0)
     #>  pkgdown                        2.2.0     2025-11-06 [1] CRAN (R 4.6.0)
-    #>  plyinteractions              * 1.9.0     2026-01-07 [1] Bioconductor
+    #>  plyinteractions              * 1.9.1     2026-01-07 [1] Bioconductor
     #>  plyranges                    * 1.31.1    2025-11-07 [1] Bioconductor 3.23 (R 4.6.0)
     #>  png                            0.1-8     2022-11-29 [1] CRAN (R 4.6.0)
     #>  purrr                        * 1.2.0     2025-11-04 [2] CRAN (R 4.6.0)
