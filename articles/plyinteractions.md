@@ -1181,7 +1181,7 @@ to cite the package and the overall approach. Thank you!
 citation("plyinteractions")
 #> To cite package 'plyinteractions' in publications use:
 #> 
-#>   Serizay J (2026). _plyinteractions: Extending tidy verbs to genomic interactions_. R package version 1.9.1, <https://github.com/js2264/plyinteractions>.
+#>   Serizay J (2026). _plyinteractions: Extending tidy verbs to genomic interactions_. R package version 1.9.2, <https://github.com/js2264/plyinteractions>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -1189,7 +1189,7 @@ citation("plyinteractions")
 #>     title = {plyinteractions: Extending tidy verbs to genomic interactions},
 #>     author = {Jacques Serizay},
 #>     year = {2026},
-#>     note = {R package version 1.9.1},
+#>     note = {R package version 1.9.2},
 #>     url = {https://github.com/js2264/plyinteractions},
 #>   }
 ```
@@ -1211,7 +1211,7 @@ ranges:
 - *[dplyr](https://CRAN.R-project.org/package=dplyr)* (Wickham,
   François, Henry, Müller, and Vaughan, 2023)
 - *[rlang](https://CRAN.R-project.org/package=rlang)* (Henry and
-  Wickham, 2025)
+  Wickham, 2026)
 - *[plyranges](https://bioconductor.org/packages/3.23/plyranges)* (Lee,
   Stuart, Cook, Dianne, Lawrence, and Michael, 2019)
 
@@ -1240,7 +1240,7 @@ Supporting documentation was generated using the following resources:
 
     #> ─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────
     #>  setting  value
-    #>  version  R Under development (unstable) (2026-01-03 r89269)
+    #>  version  R Under development (unstable) (2026-01-08 r89289)
     #>  os       Ubuntu 24.04.3 LTS
     #>  system   x86_64, linux-gnu
     #>  ui       X11
@@ -1248,7 +1248,7 @@ Supporting documentation was generated using the following resources:
     #>  collate  en_US.UTF-8
     #>  ctype    en_US.UTF-8
     #>  tz       UTC
-    #>  date     2026-01-07
+    #>  date     2026-01-11
     #>  pandoc   3.8.3 @ /usr/bin/ (via rmarkdown)
     #>  quarto   1.8.26 @ /usr/local/bin/quarto
     #> 
@@ -1263,7 +1263,7 @@ Supporting documentation was generated using the following resources:
     #>  BiocManager            1.30.27   2025-11-14 [1] CRAN (R 4.6.0)
     #>  BiocParallel           1.45.0    2025-10-30 [1] Bioconductor 3.23 (R 4.6.0)
     #>  BiocStyle            * 2.39.0    2025-10-30 [1] Bioconductor 3.23 (R 4.6.0)
-    #>  Biostrings             2.79.3    2025-12-17 [1] Bioconductor 3.23 (R 4.6.0)
+    #>  Biostrings             2.79.4    2026-01-07 [1] Bioconductor 3.23 (R 4.6.0)
     #>  bitops                 1.0-9     2024-10-03 [1] CRAN (R 4.6.0)
     #>  bookdown               0.46      2025-12-05 [1] CRAN (R 4.6.0)
     #>  bslib                  0.9.0     2025-01-30 [2] CRAN (R 4.6.0)
@@ -1293,7 +1293,7 @@ Supporting documentation was generated using the following resources:
     #>  jsonlite               2.0.0     2025-03-27 [2] CRAN (R 4.6.0)
     #>  knitr                  1.51      2025-12-20 [2] CRAN (R 4.6.0)
     #>  lattice                0.22-7    2025-04-02 [3] CRAN (R 4.6.0)
-    #>  lifecycle              1.0.4     2023-11-07 [2] CRAN (R 4.6.0)
+    #>  lifecycle              1.0.5     2026-01-08 [2] CRAN (R 4.6.0)
     #>  lubridate              1.9.4     2024-12-08 [1] CRAN (R 4.6.0)
     #>  magrittr               2.0.4     2025-09-12 [2] CRAN (R 4.6.0)
     #>  Matrix                 1.7-4     2025-08-28 [3] CRAN (R 4.6.0)
@@ -1303,17 +1303,17 @@ Supporting documentation was generated using the following resources:
     #>  pillar                 1.11.1    2025-09-17 [2] CRAN (R 4.6.0)
     #>  pkgconfig              2.0.3     2019-09-22 [2] CRAN (R 4.6.0)
     #>  pkgdown                2.2.0     2025-11-06 [1] CRAN (R 4.6.0)
-    #>  plyinteractions      * 1.9.1     2026-01-07 [1] Bioconductor
+    #>  plyinteractions      * 1.9.2     2026-01-11 [1] Bioconductor
     #>  plyr                   1.8.9     2023-10-02 [1] CRAN (R 4.6.0)
     #>  plyranges            * 1.31.1    2025-11-07 [1] Bioconductor 3.23 (R 4.6.0)
     #>  R6                     2.6.1     2025-02-15 [2] CRAN (R 4.6.0)
     #>  ragg                   1.5.0     2025-09-02 [2] CRAN (R 4.6.0)
-    #>  Rcpp                   1.1.0.8.1 2025-12-08 [2] CRAN (R 4.6.0)
+    #>  Rcpp                   1.1.1     2026-01-10 [1] CRAN (R 4.6.0)
     #>  RCurl                  1.98-1.17 2025-03-22 [1] CRAN (R 4.6.0)
     #>  RefManageR           * 1.4.0     2022-09-30 [1] CRAN (R 4.6.0)
     #>  restfulr               0.0.16    2025-06-27 [1] CRAN (R 4.6.0)
     #>  rjson                  0.2.23    2024-09-16 [1] CRAN (R 4.6.0)
-    #>  rlang                  1.1.6     2025-04-11 [2] CRAN (R 4.6.0)
+    #>  rlang                  1.1.7     2026-01-09 [2] CRAN (R 4.6.0)
     #>  rmarkdown              2.30      2025-09-28 [1] CRAN (R 4.6.0)
     #>  Rsamtools              2.27.0    2025-10-31 [1] Bioconductor 3.23 (R 4.6.0)
     #>  rtracklayer            1.71.3    2025-12-14 [1] Bioconductor 3.23 (R 4.6.0)
@@ -1353,9 +1353,9 @@ Supporting documentation was generated using the following resources:
 al. *rmarkdown: Dynamic Documents for R*. R package version 2.30. 2025.
 URL: <https://github.com/rstudio/rmarkdown>.
 
-[\[2\]](#cite-henry2025rlang) L. Henry and H. Wickham. *rlang: Functions
+[\[2\]](#cite-henry2026rlang) L. Henry and H. Wickham. *rlang: Functions
 for Base Types and Core R and ‘Tidyverse’ Features*. R package version
-1.1.6. 2025. DOI:
+1.1.7. 2026. DOI:
 [10.32614/CRAN.package.rlang](https://doi.org/10.32614/CRAN.package.rlang).
 URL: <https://CRAN.R-project.org/package=rlang>.
 
@@ -1386,7 +1386,7 @@ for Statistical Computing*. R Foundation for Statistical Computing (ROR:
 <https://www.R-project.org/>.
 
 [\[8\]](#cite-serizay2026plyinteractions) J. Serizay. *plyinteractions:
-Extending tidy verbs to genomic interactions*. R package version 1.9.1.
+Extending tidy verbs to genomic interactions*. R package version 1.9.2.
 2026. URL: <https://github.com/js2264/plyinteractions>.
 
 [\[9\]](#cite-wickham2023dplyr) H. Wickham, R. François, L. Henry, et
