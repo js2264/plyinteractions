@@ -18,7 +18,7 @@ biocViews: Software,
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 Depends: 
-    R, 
+    R (>= 4.3.0),
     InteractionSet,
     plyranges
 Imports:
