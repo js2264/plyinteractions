@@ -35,18 +35,18 @@ cell primary culture during neural development (Bonev et al., Cell 2017). Pairs
 have been filtered to only those mapped over `chr13`. 
 
 ```{r importPairs}
-library(tidyverse)
 library(plyinteractions)
+library(tidyverse)
 
 ## Importing it in R
 pairs_file <- HiContactsData::HiContactsData('mESCs', 'pairs.gz')
 pairs_df <- read.delim(
-    pairs_file, sep = "\t", header = FALSE, comment.char = "#"
+    pairs_file, sep = "\t", header = FALSE, comment.char = "#", nrows = 1e6
 ) |> 
     set_names(c(
         "ID", "seqnames1", "start1", 
         "seqnames2", "start2", "strand1", "strand2"
-    ))
+    )) 
 pairs <- as_ginteractions(
     pairs_df, end1 = start1, end2 = start2, keep.extra.columns = TRUE
 )
@@ -60,12 +60,10 @@ of each genomic fragment after digestion by **DpnII and HinfI**.
 
 ```{r cutGenome}
 ## Prepare DpnII/HinfI-digested genomic fragments
-library(GenomicRanges)
 library(Biostrings)
-library(plyranges)
 genome <- BSgenome.Mmusculus.UCSC.mm10::BSgenome.Mmusculus.UCSC.mm10
 cutter <- DNAStringSet(c("GATC", "GANTC"))  ## DpnII/HinfI cutting site
-fragments <- BiocParallel::bplapply(BPPARAM = BiocParallel::MulticoreParam(workers = 8), 
+fragments <- BiocParallel::bplapply(BPPARAM = BiocParallel::MulticoreParam(workers = 2), 
     names(genome), function(.x) {
         seq <- genome[[.x]]
         mids <- lapply(
@@ -149,7 +147,7 @@ filters <- df |>
     filter(withinMAD) |> 
     slice_head(by = group, n = 1) |> 
     select(group, n_fragments) |> 
-    dplyr::rename(threshold = n_fragments)
+    rename(threshold = n_fragments)
 filters
 ```
 

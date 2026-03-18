@@ -46,7 +46,7 @@ gi <- read.table(text = "
 ) |> as_ginteractions() 
 
 gr <- GenomicRanges::GRanges(c("chr1:20-30:+", "chr2:55-65:+")) |>
-    plyranges::mutate(id = 1:2)
+    mutate(id = 1:2)
 
 annotate(gi, gr, by = 'id')
 
@@ -70,7 +70,7 @@ genomic_bins <- GenomeInfoDb::getChromInfoFromUCSC(
 ) |> 
     GenomicRanges::tileGenome(tilewidth = 10000) |> 
     unlist() |> 
-    plyranges::mutate(binID = seq_len(plyranges::n()))
+    mutate(binID = seq_len(plyranges::n()))
 
 annotate(loops, genomic_bins, by = 'binID') |> 
     select(starts_with('binID'))
@@ -84,5 +84,5 @@ data(ce10_REs)
 annotate(ce10_ARCC, ce10_REs, by = 'annot') |> 
    count(annot.1, annot.2) |> 
    as.data.frame() |> 
-   dplyr::arrange(desc(n))
+   arrange(desc(n))
 }

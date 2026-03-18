@@ -17,6 +17,7 @@ setMethod("initialize", "GroupedGInteractions",
     }
 )
 
+#' @method show GroupedGInteractions
 setMethod("show", "GroupedGInteractions", function(object) { 
     groups <- colnames(object@group_keys)
     groups <- paste(groups, collapse = ", ")

@@ -3,6 +3,7 @@
 #' @param .data a GInteractions object
 #' @param ... Integer indicating rows to keep.
 #'
+#' @importFrom dplyr slice
 #' @importFrom rlang enquos
 #' 
 #' @return a GInteractions object.

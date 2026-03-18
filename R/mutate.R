@@ -9,6 +9,7 @@
 #'
 #' @return a GInteractions object.
 #'
+#' @importFrom dplyr mutate
 #' @importFrom tibble as_tibble
 #' @importFrom rlang enquos
 #' @importFrom rlang `:=`

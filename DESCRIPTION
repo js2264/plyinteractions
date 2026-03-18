@@ -4,8 +4,8 @@ Description: Operate on `GInteractions` objects as tabular data using
     `dplyr`-like verbs. The functions and methods in `plyinteractions`
     provide a grammatical approach to manipulate `GInteractions`, to 
     facilitate their integration in genomic analysis workflows. 
-Version: 1.9.0
-Date: 2025-07-22
+Version: 1.8.0
+Date: 2026-01-07
 Authors@R: 
     c(person("Jacques", "Serizay", , "jacquesserizay@gmail.com",
         role = c("aut", "cre")
@@ -17,12 +17,14 @@ biocViews: Software,
     Infrastructure
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-Imports:
+Depends: 
+    R, 
     InteractionSet,
+    plyranges
+Imports:
     Seqinfo, 
     BiocGenerics, 
     GenomicRanges,
-    plyranges, 
     IRanges,
     S4Vectors,
     rlang, 
@@ -49,8 +51,10 @@ Suggests:
     RefManageR
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Collate: 
+    'attach.R'
+    'zzz.R'
     'AllGenerics.R'
     'AllClasses.R'
     'add_pairdist.R'
@@ -84,9 +88,6 @@ Collate:
     'pair-granges.R'
     'pin.R'
     'plyinteractions.R'
-    'reexports-dplyr.R'
-    'reexports-plyranges.R'
-    'reexports.R'
     'rename.R'
     'replace-anchors.R'
     'select.R'
@@ -95,5 +96,3 @@ Collate:
     'stretch.R'
     'summarize.R'
 LazyData: false
-Depends: 
-    R (>= 4.3.0)

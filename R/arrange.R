@@ -52,6 +52,7 @@
 #'   mutate(rep = factor(c("rep1", "rep2", "rep1", "rep2", "rep1"))) |> 
 #'   arrange(dplyr::desc(rep), score)
 #' 
+#' @importFrom dplyr arrange
 #' @export
 arrange.GInteractions <- function(.data, ...) {
 

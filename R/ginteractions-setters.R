@@ -92,11 +92,11 @@ setMethod("set_width1",
     function(x, value) {
         if (pin(x) == 1) {
             replace_anchors(
-                x, value = plyranges::mutate(pinned_anchors(x), width = value)
+                x, value = mutate(pinned_anchors(x), width = value)
             )
         } else {
             replace_anchors(
-                x, id = 1, value = plyranges::mutate(anchors1(x), width = value)
+                x, id = 1, value = mutate(anchors1(x), width = value)
             )
         }
     }
@@ -107,11 +107,11 @@ setMethod("set_width2",
     function(x, value) {
         if (pin(x) == 2) {
             replace_anchors(
-                x, value = plyranges::mutate(pinned_anchors(x), width = value)
+                x, value = mutate(pinned_anchors(x), width = value)
             )
         } else {
             replace_anchors(
-                x, id = 2, value = plyranges::mutate(anchors2(x), width = value)
+                x, id = 2, value = mutate(anchors2(x), width = value)
             )
         }
     }

@@ -52,7 +52,7 @@ gi <- read.table(text = "
 
 gr <- GenomicRanges::GRanges(
     c("chr1:20-30:+", "chr2:55-65:-")
-) |> plyranges::mutate(id = 1:2, type = 'gr')
+) |> mutate(id = 1:2, type = 'gr')
 
 gi
 

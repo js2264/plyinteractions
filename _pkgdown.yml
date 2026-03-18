@@ -36,7 +36,9 @@ reference:
   - starts_with("group-")
 - title: "`plyranges` verbs"
   contents: 
-  - starts_with("plyranges-")
+  - plyinteractions-flank
+  - plyinteractions-shift
+  - plyranges-stretch
 - title: "Overlapping GInteractions"
   contents: 
   - ginteractions-find-overlaps
@@ -60,3 +62,9 @@ reference:
 - title: "Exporting GInteractions"
   contents: 
   - ginteractions-export
+- title: "Misc"
+  contents: 
+  - show-GInteractions
+- title: "Toy datasets"
+  contents: 
+  - plyinteractions-data

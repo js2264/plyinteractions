@@ -67,10 +67,17 @@ col.names = c(
   as_ginteractions() |> 
   mutate(score = runif(4), type = c('cis', 'cis', 'cis', 'trans'))
 
+gi
+
 ####################################################################
 # 1. Anchoring pinned genomic interactions with plyranges
 ####################################################################
 
 gi |> pin_by("second") |> anchor_end()
 
+gi |> pin_by("first") |> anchor_start()
+
+gi |> 
+  pin_by("first") |> anchor_center() |> stretch(4) |> 
+  pin_by("second") |> anchor_3p() |> stretch(-2)
 }

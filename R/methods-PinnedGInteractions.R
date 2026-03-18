@@ -34,6 +34,7 @@ setMethod("initialize", "PinnedGInteractions", function(
     .Object
 })
 
+#' @method show PinnedGInteractions
 setMethod("show", "PinnedGInteractions", function(object) { 
     output <- c("", utils::capture.output(show(object@delegate)))
     output[1] <- gsub("^GInteractions", "PinnedGInteractions", output[2])

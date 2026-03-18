@@ -14,4 +14,4 @@ pgi <- gi |> pin_by(2)
 apgi <- pgi |> anchor_5p()
 ggi <- gi |> group_by(group = c(1, 1, 2, 2))
 gr <- GenomicRanges::GRanges(c("chr1:20-30:+", "chr2:55-65:-")) |> 
-    plyranges::mutate(id = 1:2, type = 'gr')
+    mutate(id = 1:2, type = 'gr')

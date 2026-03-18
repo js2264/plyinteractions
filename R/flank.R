@@ -1,5 +1,4 @@
 #' Generate flanking regions from pinned anchors of a GInteractions object 
-#' with plyranges
 #'  
 #' @param x a PinnedGInteractions object
 #' @param width The width of the flanking region relative to the ranges in x. 
@@ -7,8 +6,8 @@
 #' x. The width can be negative in which case the flanking region is reversed.
 #' @return A PinnedGInteractions object
 #' 
-#' @name plyranges-flank
-#' @rdname plyranges-flank
+#' @name plyinteractions-flank
+#' @rdname plyinteractions-flank
 #'
 #' @examples
 #' gi <- read.table(text = "
@@ -31,7 +30,7 @@
 #' 
 #' gi |> pin_by("first") |> flank_left(-2) 
 #' 
-#' gi |> pin_by("second") |> flank_upstream(4)
+#' gi |> pin_by("second") |> flank_downstream(4)
 #' 
 #' ####################################################################
 #' # 2. Chained flanking of each set of anchors
@@ -46,63 +45,63 @@ NULL
 #' @importFrom plyranges flank_upstream
 #' @importFrom plyranges flank_right
 #' @importFrom plyranges flank_left
-#' @rdname plyranges-flank
+#' @rdname plyinteractions-flank
 #' @export
 flank_downstream <- function(x, width) UseMethod("flank_downstream")
-#' @rdname plyranges-flank
+#' @rdname plyinteractions-flank
 #' @export
 flank_downstream.Ranges <- function(x, width) 
     plyranges::flank_downstream(x, width)
-#' @rdname plyranges-flank
+#' @rdname plyinteractions-flank
 #' @export
 flank_downstream.PinnedGInteractions <- function(x, width) {
     pinned <- pinned_anchors(x) 
-    flanked_pinned <- flank_downstream(pinned, width) 
+    flanked_pinned <- plyranges::flank_downstream(pinned, width) 
     x <- replace_anchors(x, value = flanked_pinned)
     x
 }
 
-#' @rdname plyranges-flank
-#' @export
-flank_upstream <- function(x, width) UseMethod("flank_upstream")
-#' @rdname plyranges-flank
-#' @export
-flank_upstream.Ranges <- function(x, width) plyranges::flank_upstream(x, width)
-#' @rdname plyranges-flank
-#' @export
-flank_upstream.PinnedGInteractions <- function(x, width) {
-    pinned <- pinned_anchors(x) 
-    flanked_pinned <- flank_upstream(pinned, width) 
-    x <- replace_anchors(x, value = flanked_pinned)
-    x
-}
-
-#' @rdname plyranges-flank
-#' @export
-flank_right <- function(x, width) UseMethod("flank_right")
-#' @rdname plyranges-flank
-#' @export
-flank_right.Ranges <- function(x, width) plyranges::flank_right(x, width)
-#' @rdname plyranges-flank
-#' @export
-flank_right.PinnedGInteractions <- function(x, width) {
-    pinned <- pinned_anchors(x) 
-    flanked_pinned <- flank_right(pinned, width) 
-    x <- replace_anchors(x, value = flanked_pinned)
-    x
-}
-
-#' @rdname plyranges-flank
+#' @rdname plyinteractions-flank
 #' @export
 flank_left <- function(x, width) UseMethod("flank_left")
-#' @rdname plyranges-flank
+#' @rdname plyinteractions-flank
 #' @export
 flank_left.Ranges <- function(x, width) plyranges::flank_left(x, width)
-#' @rdname plyranges-flank
+#' @rdname plyinteractions-flank
 #' @export
 flank_left.PinnedGInteractions <- function(x, width) {
     pinned <- pinned_anchors(x) 
     flanked_pinned <- flank_left(pinned, width) 
+    x <- replace_anchors(x, value = flanked_pinned)
+    x
+}
+
+#' @rdname plyinteractions-flank
+#' @export
+flank_upstream <- function(x, width) UseMethod("flank_upstream")
+#' @rdname plyinteractions-flank
+#' @export
+flank_upstream.Ranges <- function(x, width) plyranges::flank_upstream(x, width)
+#' @rdname plyinteractions-flank
+#' @export
+flank_upstream.PinnedGInteractions <- function(x, width) {
+    pinned <- pinned_anchors(x) 
+    flanked_pinned <- plyranges::flank_upstream(pinned, width) 
+    x <- replace_anchors(x, value = flanked_pinned)
+    x
+}
+
+#' @rdname plyinteractions-flank
+#' @export
+flank_right <- function(x, width) UseMethod("flank_right")
+#' @rdname plyinteractions-flank
+#' @export
+flank_right.Ranges <- function(x, width) plyranges::flank_right(x, width)
+#' @rdname plyinteractions-flank
+#' @export
+flank_right.PinnedGInteractions <- function(x, width) {
+    pinned <- pinned_anchors(x) 
+    flanked_pinned <- flank_right(pinned, width) 
     x <- replace_anchors(x, value = flanked_pinned)
     x
 }

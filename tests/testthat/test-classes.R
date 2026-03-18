@@ -12,7 +12,7 @@ test_that("classes work", {
             "strand1", "strand2"
         )
     ) |> 
-        dplyr::mutate(score = runif(4), type = c('cis', 'cis', 'cis', 'trans'))
+        mutate(score = runif(4), type = c('cis', 'cis', 'cis', 'trans'))
     df |> as_ginteractions(test = strand1) |> expect_error()
     df[, seq(1, 4)] |> as_ginteractions() |> expect_error()
     df[, c(1, 2, 4, 5)] |> as_ginteractions() |> expect_error()

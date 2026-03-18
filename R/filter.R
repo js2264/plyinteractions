@@ -42,6 +42,7 @@
 #' gi |> filter(start1 >= start2 + 3)
 #' gi |> filter(score * gc > score * 0.5)
 #' 
+#' @importFrom dplyr filter
 #' @export
 filter.GInteractions <- function(.data, ...) {
 

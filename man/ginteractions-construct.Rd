@@ -12,7 +12,7 @@ as_ginteractions(
 )
 }
 \arguments{
-\item{.data}{A \code{\link[=data.frame]{data.frame()}}, \code{\link[=DataFrame]{DataFrame()}} or \code{tibble()} to
+\item{.data}{A \code{\link[=data.frame]{data.frame()}}, \code{\link[S4Vectors:DataFrame-class]{S4Vectors::DataFrame()}} or \code{tibble()} to
 construct a GInteractions object from.}
 
 \item{...}{Optional named arguments specifying which the columns in .data
