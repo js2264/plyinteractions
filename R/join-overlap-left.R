@@ -58,7 +58,7 @@ NULL
 #' @rdname ginteractions-join-overlap-left
 #' @export
 join_overlap_left.PinnedGInteractions <- function(
-    x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y")
+    x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y"), distance = FALSE
 ) {
 
     hits <- findOverlaps(
@@ -83,7 +83,7 @@ join_overlap_left.PinnedGInteractions <- function(
 #' @rdname ginteractions-join-overlap-left
 #' @export
 join_overlap_left.GInteractions <- function(
-    x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y")
+    x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y"), distance = FALSE
 ) {
 
     hits <- findOverlaps(
@@ -104,7 +104,7 @@ join_overlap_left.GInteractions <- function(
 #' @rdname ginteractions-join-overlap-left
 #' @export
 join_overlap_left_directed.PinnedGInteractions <- function(
-    x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y")
+    x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y"), distance = FALSE
 ) {
 
     hits <- findOverlaps(
@@ -129,7 +129,7 @@ join_overlap_left_directed.PinnedGInteractions <- function(
 #' @rdname ginteractions-join-overlap-left
 #' @export
 join_overlap_left_directed.GInteractions <- function(
-    x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y")
+    x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y"), distance = FALSE
 ) {
 
     hits <- findOverlaps(
