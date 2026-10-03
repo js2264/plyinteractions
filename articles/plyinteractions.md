@@ -1136,7 +1136,7 @@ to cite the package and the overall approach. Thank you!
 [`citation`](https://rdrr.io/r/utils/citation.html)`(``"plyinteractions"``)`\
 `#> To cite package 'plyinteractions' in publications use:`\
 `#> `\
-`#>   Serizay J (2026). _plyinteractions: Extending tidy verbs to genomic interactions_. R package version 1.11.0, <https://github.com/js2264/plyinteractions>.`\
+`#>   Serizay J (2026). _plyinteractions: Extending tidy verbs to genomic interactions_. R package version 1.11.1, <https://github.com/js2264/plyinteractions>.`\
 `#> `\
 `#> A BibTeX entry for LaTeX users is`\
 `#> `\
@@ -1144,7 +1144,7 @@ to cite the package and the overall approach. Thank you!
 `#>     title = {plyinteractions: Extending tidy verbs to genomic interactions},`\
 `#>     author = {Jacques Serizay},`\
 `#>     year = {2026},`\
-`#>     note = {R package version 1.11.0},`\
+`#>     note = {R package version 1.11.1},`\
 `#>     url = {https://github.com/js2264/plyinteractions},`\
 `#>   }`
 
@@ -1257,7 +1257,7 @@ Supporting documentation was generated using the following resources:
     #>  pillar                 1.11.1    2025-09-17 [2] RSPM (R 4.6.0)
     #>  pkgconfig              2.0.3     2019-09-22 [2] RSPM (R 4.6.0)
     #>  pkgdown                2.2.1     2026-07-07 [1] RSPM (R 4.6.0)
-    #>  plyinteractions      * 1.11.0    2026-10-03 [1] Bioconductor
+    #>  plyinteractions      * 1.11.1    2026-10-03 [1] Bioconductor
     #>  plyr                   1.8.9     2023-10-02 [1] RSPM (R 4.6.0)
     #>  plyranges            * 1.33.2    2026-07-30 [1] Bioconductor 3.24 (R 4.6.1)
     #>  R6                     2.6.1     2025-02-15 [2] RSPM (R 4.6.0)
@@ -1338,7 +1338,7 @@ for Statistical Computing*. R Foundation for Statistical Computing (ROR:
 <https://www.R-project.org/>.
 
 [\[8\]](#cite-serizay2026plyinteractions) J. Serizay. *plyinteractions:
-Extending tidy verbs to genomic interactions*. R package version 1.11.0.
+Extending tidy verbs to genomic interactions*. R package version 1.11.1.
 2026. URL: <https://github.com/js2264/plyinteractions>.
 
 [\[9\]](#cite-wickham2026dplyr) H. Wickham, R. François, L. Henry, et

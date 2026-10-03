@@ -512,7 +512,7 @@ aggregate counts by binned distances:
     #>  pillar                         1.11.1    2025-09-17 [2] RSPM (R 4.6.0)
     #>  pkgconfig                      2.0.3     2019-09-22 [2] RSPM (R 4.6.0)
     #>  pkgdown                        2.2.1     2026-07-07 [1] RSPM (R 4.6.0)
-    #>  plyinteractions              * 1.11.0    2026-10-03 [1] Bioconductor
+    #>  plyinteractions              * 1.11.1    2026-10-03 [1] Bioconductor
     #>  plyranges                    * 1.33.2    2026-07-30 [1] Bioconductor 3.24 (R 4.6.1)
     #>  png                            0.1-9     2026-03-15 [1] RSPM (R 4.6.0)
     #>  purrr                        * 1.2.2     2026-04-10 [2] RSPM (R 4.6.0)
