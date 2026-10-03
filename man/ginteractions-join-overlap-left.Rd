@@ -8,16 +8,31 @@
 \alias{join_overlap_left_directed.GInteractions}
 \title{Join overlaps between a query GInteractions and a GRanges}
 \usage{
-\method{join_overlap_left}{PinnedGInteractions}(x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y"))
+\method{join_overlap_left}{PinnedGInteractions}(
+  x,
+  y,
+  maxgap = -1L,
+  minoverlap = 0L,
+  suffix = c(".x", ".y"),
+  distance = FALSE
+)
 
-\method{join_overlap_left}{GInteractions}(x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y"))
+\method{join_overlap_left}{GInteractions}(
+  x,
+  y,
+  maxgap = -1L,
+  minoverlap = 0L,
+  suffix = c(".x", ".y"),
+  distance = FALSE
+)
 
 \method{join_overlap_left_directed}{PinnedGInteractions}(
   x,
   y,
   maxgap = -1L,
   minoverlap = 0L,
-  suffix = c(".x", ".y")
+  suffix = c(".x", ".y"),
+  distance = FALSE
 )
 
 \method{join_overlap_left_directed}{GInteractions}(
@@ -25,7 +40,8 @@
   y,
   maxgap = -1L,
   minoverlap = 0L,
-  suffix = c(".x", ".y")
+  suffix = c(".x", ".y"),
+  distance = FALSE
 )
 }
 \arguments{
@@ -38,9 +54,18 @@ in the \pkg{GenomicRanges} package for a description of these arguments}
 
 \item{suffix}{Suffix to add to metadata
 columns (character vector of length 2, default to \code{c(".x", ".y")}).}
+
+\item{distance}{If \code{TRUE}, add a \code{distance} column: for each interaction
+joined to a range of \code{y}, the distance between this range and the
+interaction's anchor (the pinned anchor of a PinnedGInteractions, the
+closer of the two anchors otherwise), as computed by
+\code{GenomicRanges::distance()}: \code{0} when they overlap, positive when they are
+within \code{maxgap} of each other. Interactions joined to no range get \code{NA}.}
 }
 \value{
-An integer vector of same length as x.
+A GInteractions object, with the metadata columns of \code{y} (and
+\code{distance}) added. Interactions overlapping several ranges of \code{y} are
+repeated, and those overlapping none are kept, with missing values.
 }
 \description{
 Join overlaps between a query GInteractions and a GRanges
@@ -83,4 +108,12 @@ gi |> pin_by("first") |> join_overlap_left_directed(gr)
 gi |> pin_by("second") |> join_overlap_left(gr)
 
 gi |> pin_by("second") |> join_overlap_left_directed(gr)
+
+####################################################################
+# 3. Distance between the joined ranges
+####################################################################
+
+join_overlap_left(gi, gr, maxgap = 25, distance = TRUE)
+
+gi |> pin_by("second") |> join_overlap_left(gr, maxgap = 25, distance = TRUE)
 }

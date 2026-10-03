@@ -6,12 +6,20 @@
 #' in the \pkg{GenomicRanges} package for a description of these arguments
 #' @param suffix Suffix to add to metadata 
 #' columns (character vector of length 2, default to `c(".x", ".y")`).
+#' @param distance If `TRUE`, add a `distance` column: for each interaction 
+#' joined to a range of `y`, the distance between this range and the 
+#' interaction's anchor (the pinned anchor of a PinnedGInteractions, the 
+#' closer of the two anchors otherwise), as computed by 
+#' `GenomicRanges::distance()`: `0` when they overlap, positive when they are 
+#' within `maxgap` of each other. Interactions joined to no range get `NA`.
 #'
 #' @importFrom plyranges join_overlap_left
 #' @importFrom plyranges join_overlap_left_directed
 #' @importFrom InteractionSet countOverlaps
 #' 
-#' @return An integer vector of same length as x.
+#' @return A GInteractions object, with the metadata columns of `y` (and 
+#' `distance`) added. Interactions overlapping several ranges of `y` are 
+#' repeated, and those overlapping none are kept, with missing values.
 #'
 #' @name ginteractions-join-overlap-left
 #' 
@@ -53,6 +61,14 @@
 #' gi |> pin_by("second") |> join_overlap_left(gr)
 #' 
 #' gi |> pin_by("second") |> join_overlap_left_directed(gr)
+#' 
+#' ####################################################################
+#' # 3. Distance between the joined ranges
+#' ####################################################################
+#' 
+#' join_overlap_left(gi, gr, maxgap = 25, distance = TRUE)
+#' 
+#' gi |> pin_by("second") |> join_overlap_left(gr, maxgap = 25, distance = TRUE)
 NULL
 
 #' @rdname ginteractions-join-overlap-left
@@ -76,7 +92,9 @@ join_overlap_left.PinnedGInteractions <- function(
         )
     )
 
-    .hits_to_left(unpin(x), y, hits, suffix) 
+    .hits_to_left(unpin(x), y, hits, suffix, distance = if (distance) {
+        .hits_distance(unpin(x), y, hits, as.integer(pin(x)), TRUE)
+    }) 
 
 }
 
@@ -97,7 +115,9 @@ join_overlap_left.GInteractions <- function(
         use.region = 'both'
     )
 
-    .hits_to_left(x, y, hits, suffix) 
+    .hits_to_left(x, y, hits, suffix, distance = if (distance) {
+        .hits_distance(x, y, hits, c(1L, 2L), TRUE)
+    }) 
 
 }
 
@@ -122,7 +142,9 @@ join_overlap_left_directed.PinnedGInteractions <- function(
         )
     )
 
-    .hits_to_left(unpin(x), y, hits, suffix) 
+    .hits_to_left(unpin(x), y, hits, suffix, distance = if (distance) {
+        .hits_distance(unpin(x), y, hits, as.integer(pin(x)), FALSE)
+    }) 
 
 }
 
@@ -143,7 +165,9 @@ join_overlap_left_directed.GInteractions <- function(
         use.region = 'both'
     )
 
-    .hits_to_left(x, y, hits, suffix) 
+    .hits_to_left(x, y, hits, suffix, distance = if (distance) {
+        .hits_distance(x, y, hits, c(1L, 2L), FALSE)
+    }) 
 
 }
 
@@ -193,11 +217,12 @@ join_overlap_left_directed.GInteractions <- function(
 #' @importFrom S4Vectors queryHits
 #' @importFrom S4Vectors subjectLength
 #' @importFrom S4Vectors queryLength
-.hits_to_left <- function(x, y, hits, suffix) {
+.hits_to_left <- function(x, y, hits, suffix, distance = NULL) {
 
     left <- x[S4Vectors::subjectHits(hits), ]
     right <- y[S4Vectors::queryHits(hits), ]
     mcols(left) <- .mcols_overlaps_update(left, right, suffix)
+    if (!is.null(distance)) mcols(left)$distance <- distance
 
     # Create empty DF for left entries with non overlap
     only_left <- rep(TRUE, S4Vectors::subjectLength(hits))
@@ -208,6 +233,9 @@ join_overlap_left_directed.GInteractions <- function(
         mcols(rng_only_left) <- cbind(mcols(rng_only_left), mcols_outer)
     } else {
         mcols(rng_only_left) <- mcols_outer
+    }
+    if (!is.null(distance)) {
+        mcols(rng_only_left)$distance <- rep(NA_integer_, sum(only_left))
     }
     names(mcols(rng_only_left)) <- names(mcols(left))
 
@@ -220,4 +248,19 @@ join_overlap_left_directed.GInteractions <- function(
     ]
     left_outer
 
+}
+
+## Distance between each range of `y` and the anchor of `x` it overlaps, for 
+## each pair of `hits` (queries in `y`, subjects in `x`): the given anchor, or 
+## the closer of the two. Pairs on different chromosomes (or strands, unless 
+## `ignore.strand`) are NA, as in `GenomicRanges::distance()`.
+.hits_distance <- function(x, y, hits, anchors, ignore.strand) {
+    gr <- y[S4Vectors::queryHits(hits)]
+    d <- lapply(anchors, function(i) {
+        a <- InteractionSet::anchors(x, type = c("first", "second")[[i]])
+        GenomicRanges::distance(
+            a[S4Vectors::subjectHits(hits)], gr, ignore.strand = ignore.strand
+        )
+    })
+    do.call(pmin, c(d, na.rm = TRUE))
 }

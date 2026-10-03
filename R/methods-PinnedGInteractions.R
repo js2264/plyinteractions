@@ -34,8 +34,17 @@ setMethod("initialize", "PinnedGInteractions", function(
     .Object
 })
 
+## Subsetting (`[`, filter(), slice(), arrange(), ...) applies to the wrapped
+## GInteractions, so that the result stays pinned (and anchored)
+#' @rdname delegating-ginteractions-methods
+setMethod("[", "PinnedGInteractions", function(x, i, j, ..., drop = TRUE) {
+    if (!missing(j) || length(list(...)) > 0L) stop("invalid subsetting")
+    x@delegate <- x@delegate[i]
+    x
+})
+
 #' @method show PinnedGInteractions
-setMethod("show", "PinnedGInteractions", function(object) { 
+setMethod("show", "PinnedGInteractions", function(object) {
     output <- c("", utils::capture.output(show(object@delegate)))
     output[1] <- gsub("^GInteractions", "PinnedGInteractions", output[2])
     output[2] <- paste0("Pinned on: anchors", object@pin)

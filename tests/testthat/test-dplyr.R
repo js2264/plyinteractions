@@ -120,7 +120,55 @@ test_that("dplyr functions work", {
         mutate(gi, xxx = IRanges::RleList(c(1, 2), c(3, 4)))$xxx,
         IRanges::RleList(c(1, 2), c(3, 4), c(1, 2), c(3, 4))
     )
-    ggi |> mutate(strand1 = '-') |> expect_error()
+
+    ## mutate, on grouped GInteractions: evaluated within each group, and 
+    ## grouped again
+    ggi_mutated <- ggi |> mutate(m = mean(score), m2 = m * 2)
+    expect_s4_class(ggi_mutated, "GroupedGInteractions")
+    expect_identical(group_vars(ggi_mutated), "group")
+    expect_equal(
+        ggi_mutated$m, 
+        rep(c(mean(gi$score[1:2]), mean(gi$score[3:4])), each = 2)
+    )
+    expect_equal(ggi_mutated$m2, ggi_mutated$m * 2)
+    expect_identical(
+        ggi |> mutate(strand1 = '-') |> strand1() |> as.character(), 
+        rep('-', 4)
+    )
+    expect_s4_class(ggi |> mutate(strand1 = '-'), "GroupedGInteractions")
+    expect_identical(ggi |> mutate(group = 1) |> n_groups(), 1L)
+
+    ## mutate, on pinned GInteractions: they stay pinned (and anchored)
+    pgi_mutated <- pgi |> mutate(s2 = score * 2, start2 = 1)
+    expect_s4_class(pgi_mutated, "PinnedGInteractions")
+    expect_identical(pin(pgi_mutated), 2L)
+    expect_identical(pgi_mutated$s2, gi$score * 2)
+    expect_identical(start2(pgi_mutated), rep(1L, 4))
+    apgi_mutated <- apgi |> mutate(s2 = score * 2, start1 = 1)
+    expect_s4_class(apgi_mutated, "AnchoredPinnedGInteractions")
+    expect_identical(anchor(apgi_mutated), "5p")
+    expect_identical(apgi_mutated$s2, gi$score * 2)
+    expect_identical(start1(apgi_mutated), rep(1L, 4))
+
+    ## subsetting, on pinned GInteractions: they stay pinned (and anchored)
+    expect_s4_class(pgi[2:3], "PinnedGInteractions")
+    expect_identical(unpin(pgi[2:3]), gi[2:3])
+    expect_identical(pin(filter(pgi, score > 0.5)), 2L)
+    expect_identical(
+        pgi |> filter(score > 0.5) |> unpin(), 
+        gi |> filter(score > 0.5)
+    )
+    expect_identical(apgi |> slice(2:3) |> anchor(), "5p")
+    expect_identical(apgi |> slice(2:3) |> unpin(), gi |> slice(2:3))
+    expect_identical(pgi |> arrange(score) |> unpin(), gi |> arrange(score))
+    expect_identical(
+        apgi |> mutate(width2 = 100) |> width2(), 
+        c(100L, 100L, 100L, 100L)
+    )
+    expect_s4_class(
+        apgi |> mutate(width2 = 100), 
+        "AnchoredPinnedGInteractions"
+    )
 
     ## rename
 
@@ -130,6 +178,36 @@ test_that("dplyr functions work", {
         gi |> rename(xx = type) |> as_tibble() |> colnames(), 
         c("seqnames1", "start1", "end1", "width1", "strand1", "seqnames2", 
         "start2", "end2", "width2", "strand2", "score", "xx")
+    )
+
+    ## as_tibble, length and metadata columns of grouped and pinned 
+    ## GInteractions
+    expect_identical(
+        as_tibble(ggi), 
+        as_tibble(ungroup(ggi))
+    )
+    expect_identical(length(ggi), 4L)
+    expect_identical(length(pgi), 4L)
+    expect_identical(length(apgi), 4L)
+    pgi2 <- pgi
+    pgi2$new <- 1
+    expect_s4_class(pgi2, "PinnedGInteractions")
+    expect_identical(pgi2$new, rep(1, 4))
+    ggi2 <- ggi
+    ggi2$group <- c(1, 2, 3, 4)
+    expect_s4_class(ggi2, "GroupedGInteractions")
+    expect_identical(n_groups(ggi2), 4L)
+    expect_identical(
+        as_tibble(pgi), 
+        as_tibble(gi)
+    )
+    expect_identical(
+        as_tibble(apgi), 
+        as_tibble(gi)
+    )
+    expect_identical(
+        dim(as_tibble(ggi)), 
+        c(4L, 13L)
     )
 
     ## select

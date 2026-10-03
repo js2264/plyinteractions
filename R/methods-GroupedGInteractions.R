@@ -27,6 +27,14 @@ setMethod("show", "GroupedGInteractions", function(object) {
     cat(output, sep = "\n")
 })
 
+## Groups are computed again, in case a grouping column was modified
+#' @rdname delegating-ginteractions-methods
+setReplaceMethod("mcols", "GroupedGInteractions", function(x, ..., value) {
+    delegate <- x@delegate
+    mcols(delegate, ...) <- value
+    group_by(delegate, !!!groups(x))
+})
+
 #' @export
 #' @keywords internal
 group_by.GroupedGInteractions <- function(.data, ..., .add = FALSE) {
