@@ -249,3 +249,40 @@ as_ginteractions.data.frame <- function(
     }
     gi
 }
+
+#' Turn a GInteractions object into a tibble
+#'
+#' @description `as_tibble()` returns the interactions of a GInteractions 
+#' object as a tibble: one row per interaction, with the coordinates of both 
+#' anchors (`seqnames1`, `start1`, `end1`, `width1`, `strand1`, then the same 
+#' for the second anchor) followed by the metadata columns. It is the reverse 
+#' of `as_ginteractions()`.
+#'
+#' @param x A GInteractions object.
+#' @param ... Passed to `tibble::as_tibble()`.
+#'
+#' @return A tibble.
+#'
+#' @importFrom tibble as_tibble
+#' @export
+#' @rdname ginteractions-as_tibble
+#'
+#' @examples
+#' gi <- read.table(text = "
+#' chr1 11 20 chr1 21 30 + +
+#' chr1 11 20 chr1 51 55 + +
+#' chr1 11 30 chr2 51 60 - -",
+#' col.names = c(
+#'   "seqnames1", "start1", "end1", 
+#'   "seqnames2", "start2", "end2", "strand1", "strand2")
+#' ) |> 
+#'   as_ginteractions()
+#' gi$type <- c("cis", "cis", "trans")
+#' as_tibble(gi)
+
+as_tibble.GInteractions <- function(x, ...) {
+    ## tibble's default method calls base's S3 as.data.frame(), which no 
+    ## longer reaches InteractionSet's S4 method since S4Vectors 0.51.10 
+    ## (Bioconductor 3.24): go through the S4 generic.
+    tibble::as_tibble(BiocGenerics::as.data.frame(x), ...)
+}
