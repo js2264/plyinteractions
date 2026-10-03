@@ -20,7 +20,7 @@ Roxygen: list(markdown = TRUE)
 Depends: 
     R (>= 4.3.0),
     InteractionSet,
-    plyranges
+    plyranges (>= 1.31.5)
 Imports:
     Seqinfo, 
     BiocGenerics, 
