@@ -51,7 +51,7 @@
 
 \S4method{strand2}{DelegatingGInteractions}(x)
 
-\S4method{anchors}{DelegatingGInteractions}(x)
+\S4method{anchors}{DelegatingGInteractions}(x, ...)
 
 \S4method{regions}{DelegatingGInteractions}(x)
 

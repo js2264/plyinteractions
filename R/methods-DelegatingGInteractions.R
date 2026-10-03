@@ -68,7 +68,9 @@ setMethod("strand2", "DelegatingGInteractions",
     function(x) strand2(x@delegate)
 )
 #' @rdname delegating-ginteractions-methods
-setMethod("anchors", "DelegatingGInteractions", function(x) anchors(x@delegate))
+setMethod("anchors", "DelegatingGInteractions", 
+    function(x, ...) anchors(x@delegate, ...)
+)
 #' @rdname delegating-ginteractions-methods
 setMethod("regions", "DelegatingGInteractions", function(x) regions(x@delegate))
 #' @rdname delegating-ginteractions-methods

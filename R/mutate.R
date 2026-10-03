@@ -107,6 +107,32 @@ mutate.GInteractions <- function(.data, ...) {
         .data
     }
 
+    ## Core fields of grouped or pinned GInteractions cannot be modified in 
+    ## place: the setters below rebuild a plain GInteractions, which would 
+    ## silently drop the grouping or the pinning. Only the widths of an 
+    ## AnchoredPinnedGInteractions have dedicated setters.
+    if (is(.data, "DelegatingGInteractions")) {
+        supported <- if (is(.data, "AnchoredPinnedGInteractions")) {
+            c("width1", "width2") 
+        } else {
+            character(0)
+        }
+        unsupported <- setdiff(core_cols, supported)
+        if (length(unsupported)) {
+            undo <- if (is(.data, "GroupedGInteractions")) {
+                c("grouped", "ungroup()")
+            } else {
+                c("pinned", "unpin()")
+            }
+            stop(
+                "Core fields of a ", undo[[1]], " GInteractions cannot be ",
+                "modified (", paste0("`", unsupported, "`", collapse = ", "),
+                "): `", undo[[2]], "` it first.",
+                call. = FALSE
+            )
+        }
+    }
+
     for (col in core_cols) {
         modifier <- match.fun(paste0("set_", col))
         .data <- modifier(.data, .mutated[[col]])

@@ -120,7 +120,17 @@ test_that("dplyr functions work", {
         mutate(gi, xxx = IRanges::RleList(c(1, 2), c(3, 4)))$xxx,
         IRanges::RleList(c(1, 2), c(3, 4), c(1, 2), c(3, 4))
     )
-    ggi |> mutate(strand1 = '-') |> expect_error()
+    expect_error(mutate(ggi, strand1 = '-'), "ungroup()", fixed = TRUE)
+    expect_error(mutate(pgi, start2 = 1), "unpin()", fixed = TRUE)
+    expect_error(mutate(apgi, start2 = 1), "unpin()", fixed = TRUE)
+    expect_identical(
+        apgi |> mutate(width2 = 100) |> width2(), 
+        c(100L, 100L, 100L, 100L)
+    )
+    expect_s4_class(
+        apgi |> mutate(width2 = 100), 
+        "AnchoredPinnedGInteractions"
+    )
 
     ## rename
 
@@ -130,6 +140,24 @@ test_that("dplyr functions work", {
         gi |> rename(xx = type) |> as_tibble() |> colnames(), 
         c("seqnames1", "start1", "end1", "width1", "strand1", "seqnames2", 
         "start2", "end2", "width2", "strand2", "score", "xx")
+    )
+
+    ## as_tibble
+    expect_identical(
+        as_tibble(ggi), 
+        as_tibble(ungroup(ggi))
+    )
+    expect_identical(
+        as_tibble(pgi), 
+        as_tibble(gi)
+    )
+    expect_identical(
+        as_tibble(apgi), 
+        as_tibble(gi)
+    )
+    expect_identical(
+        dim(as_tibble(ggi)), 
+        c(4L, 13L)
     )
 
     ## select
