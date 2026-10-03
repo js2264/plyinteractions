@@ -149,6 +149,18 @@ test_that("dplyr functions work", {
     expect_identical(anchor(apgi_mutated), "5p")
     expect_identical(apgi_mutated$s2, gi$score * 2)
     expect_identical(start1(apgi_mutated), rep(1L, 4))
+
+    ## subsetting, on pinned GInteractions: they stay pinned (and anchored)
+    expect_s4_class(pgi[2:3], "PinnedGInteractions")
+    expect_identical(unpin(pgi[2:3]), gi[2:3])
+    expect_identical(pin(filter(pgi, score > 0.5)), 2L)
+    expect_identical(
+        pgi |> filter(score > 0.5) |> unpin(), 
+        gi |> filter(score > 0.5)
+    )
+    expect_identical(apgi |> slice(2:3) |> anchor(), "5p")
+    expect_identical(apgi |> slice(2:3) |> unpin(), gi |> slice(2:3))
+    expect_identical(pgi |> arrange(score) |> unpin(), gi |> arrange(score))
     expect_identical(
         apgi |> mutate(width2 = 100) |> width2(), 
         c(100L, 100L, 100L, 100L)
