@@ -62,6 +62,7 @@ reference:
 - title: "Exporting GInteractions"
   contents: 
   - ginteractions-export
+  - as_tibble.GInteractions
 - title: "Misc"
   contents: 
   - show-GInteractions
