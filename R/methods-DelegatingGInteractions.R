@@ -78,6 +78,13 @@ setMethod("seqinfo", "DelegatingGInteractions", function(x) seqinfo(x@delegate))
 #' @rdname delegating-ginteractions-methods
 setMethod("mcols", "DelegatingGInteractions", function(x) mcols(x@delegate))
 #' @rdname delegating-ginteractions-methods
+setReplaceMethod("mcols", "DelegatingGInteractions", function(x, ..., value) {
+    mcols(x@delegate, ...) <- value
+    x
+})
+#' @rdname delegating-ginteractions-methods
+setMethod("length", "DelegatingGInteractions", function(x) length(x@delegate))
+#' @rdname delegating-ginteractions-methods
 setMethod("show", "DelegatingGInteractions", function(object) { 
     show(object@delegate)
 })

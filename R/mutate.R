@@ -57,12 +57,29 @@
 #' # 4. Evaluating core GInteractions columns
 #' ####################################################################
 #' 
-#' gi |> 
+#' gi |>
 #'   mutate(
-#'     score = runif(2), 
-#'     cis = seqnames1 == seqnames2, 
+#'     score = runif(2),
+#'     cis = seqnames1 == seqnames2,
 #'     distance = ifelse(cis, start2 - end1, NA)
 #'   )
+#'
+#' ####################################################################
+#' # 5. Grouped GInteractions are modified group by group
+#' ####################################################################
+#'
+#' gi4 <- read.table(text = "
+#' chr1 10 20 chr1 50 51
+#' chr1 10 50 chr2 30 40
+#' chr1 30 40 chr1 60 70
+#' chr1 30 40 chr2 20 25",
+#' col.names = c("chr1", "start1", "end1", "chr2", "start2", "end2")) |>
+#'   as_ginteractions(seqnames1 = chr1, seqnames2 = chr2) |>
+#'   mutate(score = c(1, 2, 3, 6))
+#'
+#' gi4 |>
+#'   group_by(seqnames2) |>
+#'   mutate(mean_score = mean(score), start1 = start1 + 1)
 #' @export
 mutate.GInteractions <- function(.data, ...) {
     
@@ -96,6 +113,26 @@ mutate.GInteractions <- function(.data, ...) {
     .data
 }
 
+#' @rdname dplyr-mutate
+#' @export
+mutate.GroupedGInteractions <- function(.data, ...) {
+
+    quosures <- rlang::enquos(..., .named = TRUE)
+
+    ## Evaluate within each group, as dplyr does: mutate the interactions of
+    ## each group, then put them back in their original order
+    rows <- unname(S4Vectors::split(
+        seq_len(length(.data@delegate)), .data@group_indices
+    ))
+    mutated <- lapply(as.list(rows), function(i) {
+        mutate(.data@delegate[i], !!!quosures)
+    })
+    delegate <- do.call(c, mutated)[order(unlist(rows))]
+
+    ## Groups are computed again, in case a grouping column was modified
+    group_by(delegate, !!!groups(.data))
+}
+
 #' @importFrom methods selectMethod
 .mutate_core <- function(.data, .mutated) {
     all_cols <- names(.mutated)
@@ -107,35 +144,19 @@ mutate.GInteractions <- function(.data, ...) {
         .data
     }
 
-    ## Core fields of grouped or pinned GInteractions cannot be modified in 
-    ## place: the setters below rebuild a plain GInteractions, which would 
-    ## silently drop the grouping or the pinning. Only the widths of an 
-    ## AnchoredPinnedGInteractions have dedicated setters.
-    if (is(.data, "DelegatingGInteractions")) {
-        supported <- if (is(.data, "AnchoredPinnedGInteractions")) {
-            c("width1", "width2") 
-        } else {
-            character(0)
-        }
-        unsupported <- setdiff(core_cols, supported)
-        if (length(unsupported)) {
-            undo <- if (is(.data, "GroupedGInteractions")) {
-                c("grouped", "ungroup()")
-            } else {
-                c("pinned", "unpin()")
-            }
-            stop(
-                "Core fields of a ", undo[[1]], " GInteractions cannot be ",
-                "modified (", paste0("`", unsupported, "`", collapse = ", "),
-                "): `", undo[[2]], "` it first.",
-                call. = FALSE
-            )
-        }
-    }
-
     for (col in core_cols) {
         modifier <- match.fun(paste0("set_", col))
-        .data <- modifier(.data, .mutated[[col]])
+        ## The setters rebuild a plain GInteractions: a pinned one is modified
+        ## through the GInteractions it wraps, so that it stays pinned, except
+        ## for the widths of an AnchoredPinnedGInteractions, which have their
+        ## own setters
+        anchored_width <- is(.data, "AnchoredPinnedGInteractions") &&
+            col %in% c("width1", "width2")
+        if (is(.data, "DelegatingGInteractions") && !anchored_width) {
+            .data@delegate <- modifier(.data@delegate, .mutated[[col]])
+        } else {
+            .data <- modifier(.data, .mutated[[col]])
+        }
     }
     .data
 }

@@ -3,9 +3,12 @@
 \name{dplyr-mutate}
 \alias{dplyr-mutate}
 \alias{mutate.GInteractions}
+\alias{mutate.GroupedGInteractions}
 \title{Mutate columns from a GInteractions object}
 \usage{
 \method{mutate}{GInteractions}(.data, ...)
+
+\method{mutate}{GroupedGInteractions}(.data, ...)
 }
 \arguments{
 \item{.data}{a GInteractions object}
@@ -62,10 +65,27 @@ gi |>
 # 4. Evaluating core GInteractions columns
 ####################################################################
 
-gi |> 
+gi |>
   mutate(
-    score = runif(2), 
-    cis = seqnames1 == seqnames2, 
+    score = runif(2),
+    cis = seqnames1 == seqnames2,
     distance = ifelse(cis, start2 - end1, NA)
   )
+
+####################################################################
+# 5. Grouped GInteractions are modified group by group
+####################################################################
+
+gi4 <- read.table(text = "
+chr1 10 20 chr1 50 51
+chr1 10 50 chr2 30 40
+chr1 30 40 chr1 60 70
+chr1 30 40 chr2 20 25",
+col.names = c("chr1", "start1", "end1", "chr2", "start2", "end2")) |>
+  as_ginteractions(seqnames1 = chr1, seqnames2 = chr2) |>
+  mutate(score = c(1, 2, 3, 6))
+
+gi4 |>
+  group_by(seqnames2) |>
+  mutate(mean_score = mean(score), start1 = start1 + 1)
 }
