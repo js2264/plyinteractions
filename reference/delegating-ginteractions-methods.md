@@ -48,7 +48,7 @@ width2(x)
 strand2(x)
 
 # S4 method for class 'DelegatingGInteractions'
-anchors(x)
+anchors(x, ...)
 
 # S4 method for class 'DelegatingGInteractions'
 regions(x)
@@ -60,7 +60,19 @@ seqinfo(x)
 mcols(x)
 
 # S4 method for class 'DelegatingGInteractions'
+mcols(x, ...) <- value
+
+# S4 method for class 'DelegatingGInteractions'
+length(x)
+
+# S4 method for class 'DelegatingGInteractions'
 show(object)
+
+# S4 method for class 'GroupedGInteractions'
+mcols(x, ...) <- value
+
+# S4 method for class 'PinnedGInteractions,ANY,ANY,ANY'
+x[i, j, ..., drop = TRUE]
 ```
 
 ## Value

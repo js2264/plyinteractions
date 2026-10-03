@@ -59,11 +59,11 @@ gi |> select(2, 1)
 #>   [5]      chr5      1-10       * ---      chr5      1-10       * |      TRUE
 #>           score
 #>       <numeric>
-#>   [1]   17.4676
-#>   [2]   53.1574
-#>   [3]   49.3637
-#>   [4]   77.9309
-#>   [5]   20.4178
+#>   [1]   70.6434
+#>   [2]   94.8577
+#>   [3]   18.0339
+#>   [4]   21.6900
+#>   [5]   68.0163
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 5 sequences from an unspecified genome; no seqlengths
@@ -71,11 +71,11 @@ gi |> select(-3)
 #> GInteractions object with 5 interactions and 2 metadata columns:
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1      1-10       * ---      chr1      1-10       * |   17.4676
-#>   [2]      chr2      1-10       * ---      chr2      1-10       * |   53.1574
-#>   [3]      chr3      1-10       * ---      chr3      1-10       * |   49.3637
-#>   [4]      chr4      1-10       * ---      chr4      1-10       * |   77.9309
-#>   [5]      chr5      1-10       * ---      chr5      1-10       * |   20.4178
+#>   [1]      chr1      1-10       * ---      chr1      1-10       * |   70.6434
+#>   [2]      chr2      1-10       * ---      chr2      1-10       * |   94.8577
+#>   [3]      chr3      1-10       * ---      chr3      1-10       * |   18.0339
+#>   [4]      chr4      1-10       * ---      chr4      1-10       * |   21.6900
+#>   [5]      chr5      1-10       * ---      chr5      1-10       * |   68.0163
 #>             cis
 #>       <logical>
 #>   [1]      TRUE
@@ -95,18 +95,18 @@ gi |> select(gc, score)
 #> GInteractions object with 5 interactions and 2 metadata columns:
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        gc
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1      1-10       * ---      chr1      1-10       * | 0.7133973
-#>   [2]      chr2      1-10       * ---      chr2      1-10       * | 0.0652161
-#>   [3]      chr3      1-10       * ---      chr3      1-10       * | 0.3542068
-#>   [4]      chr4      1-10       * ---      chr4      1-10       * | 0.8251994
-#>   [5]      chr5      1-10       * ---      chr5      1-10       * | 0.2738182
+#>   [1]      chr1      1-10       * ---      chr1      1-10       * | 0.4988456
+#>   [2]      chr2      1-10       * ---      chr2      1-10       * | 0.6416793
+#>   [3]      chr3      1-10       * ---      chr3      1-10       * | 0.6602843
+#>   [4]      chr4      1-10       * ---      chr4      1-10       * | 0.0960242
+#>   [5]      chr5      1-10       * ---      chr5      1-10       * | 0.7656002
 #>           score
 #>       <numeric>
-#>   [1]   17.4676
-#>   [2]   53.1574
-#>   [3]   49.3637
-#>   [4]   77.9309
-#>   [5]   20.4178
+#>   [1]   70.6434
+#>   [2]   94.8577
+#>   [3]   18.0339
+#>   [4]   21.6900
+#>   [5]   68.0163
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 5 sequences from an unspecified genome; no seqlengths
@@ -119,11 +119,11 @@ gi |> select(contains('s'))
 #> GInteractions object with 5 interactions and 2 metadata columns:
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1      1-10       * ---      chr1      1-10       * |   17.4676
-#>   [2]      chr2      1-10       * ---      chr2      1-10       * |   53.1574
-#>   [3]      chr3      1-10       * ---      chr3      1-10       * |   49.3637
-#>   [4]      chr4      1-10       * ---      chr4      1-10       * |   77.9309
-#>   [5]      chr5      1-10       * ---      chr5      1-10       * |   20.4178
+#>   [1]      chr1      1-10       * ---      chr1      1-10       * |   70.6434
+#>   [2]      chr2      1-10       * ---      chr2      1-10       * |   94.8577
+#>   [3]      chr3      1-10       * ---      chr3      1-10       * |   18.0339
+#>   [4]      chr4      1-10       * ---      chr4      1-10       * |   21.6900
+#>   [5]      chr5      1-10       * ---      chr5      1-10       * |   68.0163
 #>             cis
 #>       <logical>
 #>   [1]      TRUE
@@ -138,11 +138,11 @@ gi |> select(matches('^s'))
 #> GInteractions object with 5 interactions and 1 metadata column:
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1      1-10       * ---      chr1      1-10       * |   17.4676
-#>   [2]      chr2      1-10       * ---      chr2      1-10       * |   53.1574
-#>   [3]      chr3      1-10       * ---      chr3      1-10       * |   49.3637
-#>   [4]      chr4      1-10       * ---      chr4      1-10       * |   77.9309
-#>   [5]      chr5      1-10       * ---      chr5      1-10       * |   20.4178
+#>   [1]      chr1      1-10       * ---      chr1      1-10       * |   70.6434
+#>   [2]      chr2      1-10       * ---      chr2      1-10       * |   94.8577
+#>   [3]      chr3      1-10       * ---      chr3      1-10       * |   18.0339
+#>   [4]      chr4      1-10       * ---      chr4      1-10       * |   21.6900
+#>   [5]      chr5      1-10       * ---      chr5      1-10       * |   68.0163
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 5 sequences from an unspecified genome; no seqlengths
@@ -155,9 +155,9 @@ gi |> select(matches('^s'), .drop_ranges = TRUE)
 #> DataFrame with 5 rows and 7 columns
 #>   seqnames1    start1 strand1 seqnames2    start2 strand2     score
 #>       <Rle> <integer>   <Rle>     <Rle> <integer>   <Rle> <numeric>
-#> 1      chr1         1       *      chr1         1       *   17.4676
-#> 2      chr2         1       *      chr2         1       *   53.1574
-#> 3      chr3         1       *      chr3         1       *   49.3637
-#> 4      chr4         1       *      chr4         1       *   77.9309
-#> 5      chr5         1       *      chr5         1       *   20.4178
+#> 1      chr1         1       *      chr1         1       *   70.6434
+#> 2      chr2         1       *      chr2         1       *   94.8577
+#> 3      chr3         1       *      chr3         1       *   18.0339
+#> 4      chr4         1       *      chr4         1       *   21.6900
+#> 5      chr5         1       *      chr5         1       *   68.0163
 ```

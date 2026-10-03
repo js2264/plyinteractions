@@ -6,10 +6,24 @@ Join overlaps between a query GInteractions and a GRanges
 
 ``` r
 # S3 method for class 'PinnedGInteractions'
-join_overlap_left(x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y"))
+join_overlap_left(
+  x,
+  y,
+  maxgap = -1L,
+  minoverlap = 0L,
+  suffix = c(".x", ".y"),
+  distance = FALSE
+)
 
 # S3 method for class 'GInteractions'
-join_overlap_left(x, y, maxgap = -1L, minoverlap = 0L, suffix = c(".x", ".y"))
+join_overlap_left(
+  x,
+  y,
+  maxgap = -1L,
+  minoverlap = 0L,
+  suffix = c(".x", ".y"),
+  distance = FALSE
+)
 
 # S3 method for class 'PinnedGInteractions'
 join_overlap_left_directed(
@@ -17,7 +31,8 @@ join_overlap_left_directed(
   y,
   maxgap = -1L,
   minoverlap = 0L,
-  suffix = c(".x", ".y")
+  suffix = c(".x", ".y"),
+  distance = FALSE
 )
 
 # S3 method for class 'GInteractions'
@@ -26,7 +41,8 @@ join_overlap_left_directed(
   y,
   maxgap = -1L,
   minoverlap = 0L,
-  suffix = c(".x", ".y")
+  suffix = c(".x", ".y"),
+  distance = FALSE
 )
 ```
 
@@ -51,9 +67,21 @@ join_overlap_left_directed(
   Suffix to add to metadata columns (character vector of length 2,
   default to `c(".x", ".y")`).
 
+- distance:
+
+  If `TRUE`, add a `distance` column: for each interaction joined to a
+  range of `y`, the distance between this range and the interaction's
+  anchor (the pinned anchor of a PinnedGInteractions, the closer of the
+  two anchors otherwise), as computed by
+  [`GenomicRanges::distance()`](https://rdrr.io/pkg/IRanges/man/nearest-methods.html):
+  `0` when they overlap, positive when they are within `maxgap` of each
+  other. Interactions joined to no range get `NA`.
+
 ## Value
 
-An integer vector of same length as x.
+A GInteractions object, with the metadata columns of `y` (and
+`distance`) added. Interactions overlapping several ranges of `y` are
+repeated, and those overlapping none are kept, with missing values.
 
 ## Examples
 
@@ -213,6 +241,48 @@ gi |> pin_by("second") |> join_overlap_left_directed(gr)
 #>   [2]          gi      <NA>        <NA>
 #>   [3]          gi      <NA>        <NA>
 #>   [4]          gi      <NA>        <NA>
+#>   -------
+#>   regions: 5 ranges and 0 metadata columns
+#>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
+
+####################################################################
+# 3. Distance between the joined ranges
+####################################################################
+
+join_overlap_left(gi, gr, maxgap = 25, distance = TRUE)
+#> GInteractions object with 5 interactions and 5 metadata columns:
+#>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |      id.x
+#>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <integer>
+#>   [1]      chr1     11-20       - ---      chr1     21-30       + |         1
+#>   [2]      chr1     11-20       - ---      chr1     51-55       + |         2
+#>   [3]      chr1     21-30       - ---      chr1     51-55       + |         3
+#>   [4]      chr1     21-30       - ---      chr2     51-60       + |         4
+#>   [5]      chr1     21-30       - ---      chr2     51-60       + |         4
+#>            type.x      id.y      type.y  distance
+#>       <character> <integer> <character> <integer>
+#>   [1]          gi         1          gr         0
+#>   [2]          gi         1          gr         0
+#>   [3]          gi         1          gr         0
+#>   [4]          gi         1          gr         0
+#>   [5]          gi         2          gr         0
+#>   -------
+#>   regions: 5 ranges and 0 metadata columns
+#>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
+
+gi |> pin_by("second") |> join_overlap_left(gr, maxgap = 25, distance = TRUE)
+#> GInteractions object with 4 interactions and 5 metadata columns:
+#>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |      id.x
+#>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <integer>
+#>   [1]      chr1     11-20       - ---      chr1     21-30       + |         1
+#>   [2]      chr1     11-20       - ---      chr1     51-55       + |         2
+#>   [3]      chr1     21-30       - ---      chr1     51-55       + |         3
+#>   [4]      chr1     21-30       - ---      chr2     51-60       + |         4
+#>            type.x      id.y      type.y  distance
+#>       <character> <integer> <character> <integer>
+#>   [1]          gi         1          gr         0
+#>   [2]          gi         1          gr        20
+#>   [3]          gi         1          gr        20
+#>   [4]          gi         2          gr         0
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths

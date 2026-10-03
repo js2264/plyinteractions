@@ -60,10 +60,10 @@ gi
 #> GInteractions object with 4 interactions and 2 metadata columns:
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     11-20       + ---      chr1     21-30       + |  0.947764
-#>   [2]      chr1     11-20       + ---      chr1     51-55       + |  0.542480
-#>   [3]      chr1     11-30       - ---      chr1     51-55       - |  0.544603
-#>   [4]      chr1     11-30       - ---      chr2     51-60       - |  0.278597
+#>   [1]      chr1     11-20       + ---      chr1     21-30       + |  0.769675
+#>   [2]      chr1     11-20       + ---      chr1     51-55       + |  0.990712
+#>   [3]      chr1     11-30       - ---      chr1     51-55       - |  0.970521
+#>   [4]      chr1     11-30       - ---      chr2     51-60       - |  0.389183
 #>              type
 #>       <character>
 #>   [1]         cis
@@ -78,15 +78,15 @@ gi |> group_by(type) |> summarize(m = mean(score))
 #> DataFrame with 2 rows and 2 columns
 #>          type         m
 #>   <character> <numeric>
-#> 1         cis  0.678283
-#> 2       trans  0.278597
+#> 1         cis  0.910303
+#> 2       trans  0.389183
 
 gi |> group_by(strand1) |> summarize(m = mean(score))
 #> DataFrame with 2 rows and 2 columns
 #>   strand1         m
 #>     <Rle> <numeric>
-#> 1       +  0.745122
-#> 2       -  0.411600
+#> 1       +  0.880194
+#> 2       -  0.679852
 
 df <- gi |> 
   group_by(strand1) |> 
@@ -95,8 +95,8 @@ df
 #> DataFrame with 2 rows and 3 columns
 #>   strand1         m             n
 #>     <Rle> <numeric> <IntegerList>
-#> 1       +  0.745122           2,0
-#> 2       -  0.411600           1,1
+#> 1       +  0.880194           2,0
+#> 2       -  0.679852           1,1
 
 df$n
 #> IntegerList of length 2
@@ -113,7 +113,7 @@ gi |>
 #> DataFrame with 3 rows and 4 columns
 #>   strand1 seqnames2         m             n
 #>     <Rle>     <Rle> <numeric> <IntegerList>
-#> 1       +      chr1  0.745122           2,0
-#> 2       -      chr1  0.544603           1,0
-#> 3       -      chr2  0.278597           0,1
+#> 1       +      chr1  0.880194           2,0
+#> 2       -      chr1  0.970521           1,0
+#> 3       -      chr2  0.389183           0,1
 ```

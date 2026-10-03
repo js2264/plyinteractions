@@ -45,8 +45,8 @@ gi |> rename(interaction_type = type, GC = score)
 #>   [2]      chr1     10-50       * ---      chr2     30-40       * |
 #>       interaction_type        GC
 #>            <character> <numeric>
-#>   [1]              cis  0.970521
-#>   [2]            trans  0.389183
+#>   [1]              cis  0.479025
+#>   [2]            trans  0.432171
 #>   -------
 #>   regions: 4 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths

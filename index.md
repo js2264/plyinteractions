@@ -67,10 +67,8 @@ from our vignette.
 
 `plyinteractions` can be currently be installed from GitHub:
 
-``` r
-
-BiocManager::install("tidyomics/plyinteractions")
-```
+\
+`BiocManager``::`[`install`](https://bioconductor.github.io/BiocManager/reference/install.html)`(``"tidyomics/plyinteractions"``)`
 
 ## Using `plyinteractions`
 

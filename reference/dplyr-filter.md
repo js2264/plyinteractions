@@ -52,11 +52,11 @@ gi
 #>   [5]      chr5      5-10       * ---      chr5      1-10       * |  TRUE
 #>           score        gc
 #>       <numeric> <numeric>
-#>   [1]  73.53196 0.5302125
-#>   [2]  19.59567 0.6958239
-#>   [3]  98.05397 0.6885560
-#>   [4]  74.15215 0.0312303
-#>   [5]   5.14463 0.2255625
+#>   [1]  40.23282  0.975548
+#>   [2]  19.56698  0.289892
+#>   [3]  40.35381  0.678380
+#>   [4]   6.36615  0.735320
+#>   [5]  38.87013  0.195957
 #>   -------
 #>   regions: 9 ranges and 0 metadata columns
 #>   seqinfo: 5 sequences from an unspecified genome; no seqlengths
@@ -66,32 +66,30 @@ gi
 ####################################################################
 
 gi |> filter(gc > 0.1)
-#> GInteractions object with 4 interactions and 3 metadata columns:
+#> GInteractions object with 5 interactions and 3 metadata columns:
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |   cis
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <Rle>
 #>   [1]      chr1      1-10       * ---      chr1      1-10       * |  TRUE
 #>   [2]      chr1      2-10       * ---      chr2      1-10       * | FALSE
 #>   [3]      chr3      3-10       * ---      chr3      1-10       * |  TRUE
-#>   [4]      chr5      5-10       * ---      chr5      1-10       * |  TRUE
+#>   [4]      chr4      4-10       * ---      chr4      1-10       * |  TRUE
+#>   [5]      chr5      5-10       * ---      chr5      1-10       * |  TRUE
 #>           score        gc
 #>       <numeric> <numeric>
-#>   [1]  73.53196  0.530212
-#>   [2]  19.59567  0.695824
-#>   [3]  98.05397  0.688556
-#>   [4]   5.14463  0.225563
+#>   [1]  40.23282  0.975548
+#>   [2]  19.56698  0.289892
+#>   [3]  40.35381  0.678380
+#>   [4]   6.36615  0.735320
+#>   [5]  38.87013  0.195957
 #>   -------
 #>   regions: 9 ranges and 0 metadata columns
 #>   seqinfo: 5 sequences from an unspecified genome; no seqlengths
 gi |> filter(gc > 0.1, score > 50)
-#> GInteractions object with 2 interactions and 3 metadata columns:
-#>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |   cis
-#>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <Rle>
-#>   [1]      chr1      1-10       * ---      chr1      1-10       * |  TRUE
-#>   [2]      chr3      3-10       * ---      chr3      1-10       * |  TRUE
-#>           score        gc
-#>       <numeric> <numeric>
-#>   [1]    73.532  0.530212
-#>   [2]    98.054  0.688556
+#> GInteractions object with 0 interactions and 3 metadata columns:
+#>    seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |   cis
+#>        <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <Rle>
+#>        score        gc
+#>    <numeric> <numeric>
 #>   -------
 #>   regions: 9 ranges and 0 metadata columns
 #>   seqinfo: 5 sequences from an unspecified genome; no seqlengths
@@ -105,10 +103,10 @@ gi |> filter(cis)
 #>   [4]      chr5      5-10       * ---      chr5      1-10       * |  TRUE
 #>           score        gc
 #>       <numeric> <numeric>
-#>   [1]  73.53196 0.5302125
-#>   [2]  98.05397 0.6885560
-#>   [3]  74.15215 0.0312303
-#>   [4]   5.14463 0.2255625
+#>   [1]  40.23282  0.975548
+#>   [2]  40.35381  0.678380
+#>   [3]   6.36615  0.735320
+#>   [4]  38.87013  0.195957
 #>   -------
 #>   regions: 9 ranges and 0 metadata columns
 #>   seqinfo: 5 sequences from an unspecified genome; no seqlengths
@@ -128,11 +126,11 @@ gi
 #>   [5]      chr5      5-10       * ---      chr5      1-10       * |  TRUE
 #>           score        gc
 #>       <numeric> <numeric>
-#>   [1]  73.53196 0.5302125
-#>   [2]  19.59567 0.6958239
-#>   [3]  98.05397 0.6885560
-#>   [4]  74.15215 0.0312303
-#>   [5]   5.14463 0.2255625
+#>   [1]  40.23282  0.975548
+#>   [2]  19.56698  0.289892
+#>   [3]  40.35381  0.678380
+#>   [4]   6.36615  0.735320
+#>   [5]  38.87013  0.195957
 #>   -------
 #>   regions: 9 ranges and 0 metadata columns
 #>   seqinfo: 5 sequences from an unspecified genome; no seqlengths
@@ -144,8 +142,8 @@ gi |> filter(start1 >= start2 + 3)
 #>   [2]      chr5      5-10       * ---      chr5      1-10       * |  TRUE
 #>           score        gc
 #>       <numeric> <numeric>
-#>   [1]  74.15215 0.0312303
-#>   [2]   5.14463 0.2255625
+#>   [1]   6.36615  0.735320
+#>   [2]  38.87013  0.195957
 #>   -------
 #>   regions: 9 ranges and 0 metadata columns
 #>   seqinfo: 5 sequences from an unspecified genome; no seqlengths
@@ -154,13 +152,13 @@ gi |> filter(score * gc > score * 0.5)
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |   cis
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <Rle>
 #>   [1]      chr1      1-10       * ---      chr1      1-10       * |  TRUE
-#>   [2]      chr1      2-10       * ---      chr2      1-10       * | FALSE
-#>   [3]      chr3      3-10       * ---      chr3      1-10       * |  TRUE
+#>   [2]      chr3      3-10       * ---      chr3      1-10       * |  TRUE
+#>   [3]      chr4      4-10       * ---      chr4      1-10       * |  TRUE
 #>           score        gc
 #>       <numeric> <numeric>
-#>   [1]   73.5320  0.530212
-#>   [2]   19.5957  0.695824
-#>   [3]   98.0540  0.688556
+#>   [1]  40.23282  0.975548
+#>   [2]  40.35381  0.678380
+#>   [3]   6.36615  0.735320
 #>   -------
 #>   regions: 9 ranges and 0 metadata columns
 #>   seqinfo: 5 sequences from an unspecified genome; no seqlengths

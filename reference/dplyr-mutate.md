@@ -7,6 +7,9 @@ Mutate columns from a GInteractions object
 ``` r
 # S3 method for class 'GInteractions'
 mutate(.data, ...)
+
+# S3 method for class 'GroupedGInteractions'
+mutate(.data, ...)
 ```
 
 ## Arguments
@@ -47,8 +50,8 @@ gi |>
 #>   [2]      chr1     10-50       * ---      chr2     30-40       * |       trans
 #>           score       type2
 #>       <numeric> <character>
-#>   [1]  0.680163         cis
-#>   [2]  0.498846       trans
+#>   [1]  0.695824         cis
+#>   [2]  0.688556       trans
 #>   -------
 #>   regions: 4 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -117,22 +120,56 @@ gi |>
 # 4. Evaluating core GInteractions columns
 ####################################################################
 
-gi |> 
+gi |>
   mutate(
-    score = runif(2), 
-    cis = seqnames1 == seqnames2, 
+    score = runif(2),
+    cis = seqnames1 == seqnames2,
     distance = ifelse(cis, start2 - end1, NA)
   )
 #> GInteractions object with 2 interactions and 3 metadata columns:
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     10-20       * ---      chr1     50-51       * | 0.0960242
-#>   [2]      chr1     10-50       * ---      chr2     30-40       * | 0.7656002
+#>   [1]      chr1     10-20       * ---      chr1     50-51       * |  0.300831
+#>   [2]      chr1     10-50       * ---      chr2     30-40       * |  0.636466
 #>         cis  distance
 #>       <Rle> <integer>
 #>   [1]  TRUE        30
 #>   [2] FALSE      <NA>
 #>   -------
 #>   regions: 4 ranges and 0 metadata columns
+#>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
+
+####################################################################
+# 5. Grouped GInteractions are modified group by group
+####################################################################
+
+gi4 <- read.table(text = "
+chr1 10 20 chr1 50 51
+chr1 10 50 chr2 30 40
+chr1 30 40 chr1 60 70
+chr1 30 40 chr2 20 25",
+col.names = c("chr1", "start1", "end1", "chr2", "start2", "end2")) |>
+  as_ginteractions(seqnames1 = chr1, seqnames2 = chr2) |>
+  mutate(score = c(1, 2, 3, 6))
+
+gi4 |>
+  group_by(seqnames2) |>
+  mutate(mean_score = mean(score), start1 = start1 + 1)
+#> GroupedGInteractions object with 4 interactions and 2 metadata columns:
+#> Groups: seqnames2 [2]
+#>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
+#>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
+#>   [1]      chr1     11-20       * ---      chr1     50-51       * |         1
+#>   [2]      chr1     11-50       * ---      chr2     30-40       * |         2
+#>   [3]      chr1     31-40       * ---      chr1     60-70       * |         3
+#>   [4]      chr1     31-40       * ---      chr2     20-25       * |         6
+#>       mean_score
+#>        <numeric>
+#>   [1]          2
+#>   [2]          4
+#>   [3]          2
+#>   [4]          4
+#>   -------
+#>   regions: 7 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
 ```

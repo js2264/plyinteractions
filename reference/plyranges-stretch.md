@@ -50,10 +50,10 @@ gi
 #> GInteractions object with 4 interactions and 2 metadata columns:
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     11-20       + ---      chr1     21-30       + |  0.858666
-#>   [2]      chr1     11-20       + ---      chr1     51-55       + |  0.566894
-#>   [3]      chr1     11-30       - ---      chr1     51-55       - |  0.252997
-#>   [4]      chr1     11-30       - ---      chr2     51-60       - |  0.918803
+#>   [1]      chr1     11-20       + ---      chr1     21-30       + |  0.446702
+#>   [2]      chr1     11-20       + ---      chr1     51-55       + |  0.371511
+#>   [3]      chr1     11-30       - ---      chr1     51-55       - |  0.028061
+#>   [4]      chr1     11-30       - ---      chr2     51-60       - |  0.465987
 #>              type
 #>       <character>
 #>   [1]         cis
@@ -69,10 +69,10 @@ gi |> pin_by("first") |> anchor_start() |> stretch(15)
 #> Pinned on: anchors1
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     11-35       + ---      chr1     21-30       + |  0.858666
-#>   [2]      chr1     11-35       + ---      chr1     51-55       + |  0.566894
-#>   [3]      chr1     11-45       - ---      chr1     51-55       - |  0.252997
-#>   [4]      chr1     11-45       - ---      chr2     51-60       - |  0.918803
+#>   [1]      chr1     11-35       + ---      chr1     21-30       + |  0.446702
+#>   [2]      chr1     11-35       + ---      chr1     51-55       + |  0.371511
+#>   [3]      chr1     11-45       - ---      chr1     51-55       - |  0.028061
+#>   [4]      chr1     11-45       - ---      chr2     51-60       - |  0.465987
 #>              type
 #>       <character>
 #>   [1]         cis
@@ -88,10 +88,10 @@ gi |> pin_by("second") |> anchor_center() |> stretch(10)
 #> Pinned on: anchors2
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     11-20       + ---      chr1     16-35       + |  0.858666
-#>   [2]      chr1     11-20       + ---      chr1     46-60       + |  0.566894
-#>   [3]      chr1     11-30       - ---      chr1     46-60       - |  0.252997
-#>   [4]      chr1     11-30       - ---      chr2     46-65       - |  0.918803
+#>   [1]      chr1     11-20       + ---      chr1     16-35       + |  0.446702
+#>   [2]      chr1     11-20       + ---      chr1     46-60       + |  0.371511
+#>   [3]      chr1     11-30       - ---      chr1     46-60       - |  0.028061
+#>   [4]      chr1     11-30       - ---      chr2     46-65       - |  0.465987
 #>              type
 #>       <character>
 #>   [1]         cis
@@ -107,10 +107,10 @@ gi |> pin_by("second") |> anchor_3p() |> stretch(20)
 #> Pinned on: anchors2
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     11-20       + ---      chr1      1-30       + |  0.858666
-#>   [2]      chr1     11-20       + ---      chr1     31-55       + |  0.566894
-#>   [3]      chr1     11-30       - ---      chr1     51-75       - |  0.252997
-#>   [4]      chr1     11-30       - ---      chr2     51-80       - |  0.918803
+#>   [1]      chr1     11-20       + ---      chr1      1-30       + |  0.446702
+#>   [2]      chr1     11-20       + ---      chr1     31-55       + |  0.371511
+#>   [3]      chr1     11-30       - ---      chr1     51-75       - |  0.028061
+#>   [4]      chr1     11-30       - ---      chr2     51-80       - |  0.465987
 #>              type
 #>       <character>
 #>   [1]         cis
@@ -132,10 +132,10 @@ gi |>
 #> Pinned on: anchors2
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     11-40       + ---      chr1     11-40       + |  0.858666
-#>   [2]      chr1     11-40       + ---      chr1     41-65       + |  0.566894
-#>   [3]      chr1     11-50       - ---      chr1     41-65       - |  0.252997
-#>   [4]      chr1     11-50       - ---      chr2     41-70       - |  0.918803
+#>   [1]      chr1     11-40       + ---      chr1     11-40       + |  0.446702
+#>   [2]      chr1     11-40       + ---      chr1     41-65       + |  0.371511
+#>   [3]      chr1     11-50       - ---      chr1     41-65       - |  0.028061
+#>   [4]      chr1     11-50       - ---      chr2     41-70       - |  0.465987
 #>              type
 #>       <character>
 #>   [1]         cis

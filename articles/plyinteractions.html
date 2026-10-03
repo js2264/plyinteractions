@@ -12,8 +12,8 @@
 <link rel="icon" sizes="any" href="../favicon.ico">
 <link rel="manifest" href="../site.webmanifest">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
 <meta property="og:title" content="plyinteractions">
@@ -26,7 +26,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">plyinteractions</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.9.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">1.11.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,9 +64,9 @@
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>plyinteractions</h1>
             
-            <h4 data-toc-skip class="date">11 January 2026</h4>
+            <h4 data-toc-skip class="date">3 October 2026</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/js2264/plyinteractions/blob/devel/vignettes/plyinteractions.Rmd" class="external-link"><code>vignettes/plyinteractions.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/js2264/plyinteractions/blob/claude/new-session-craecj/vignettes/plyinteractions.Rmd" class="external-link"><code>vignettes/plyinteractions.Rmd</code></a></small>
       <div class="d-none name"><code>plyinteractions.Rmd</code></div>
     </div>
 
@@ -75,9 +75,9 @@
 <div class="section level2">
 <h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
-<p>The <em><a href="https://bioconductor.org/packages/3.23/plyinteractions" class="external-link">plyinteractions</a></em>
+<p>The <em><a href="https://bioconductor.org/packages/3.24/plyinteractions" class="external-link">plyinteractions</a></em>
 package introduces tidy methods for the <code>GInteractions</code> class
-defined in the <em><a href="https://bioconductor.org/packages/3.23/InteractionSet" class="external-link">InteractionSet</a></em>
+defined in the <em><a href="https://bioconductor.org/packages/3.24/InteractionSet" class="external-link">InteractionSet</a></em>
 package (Lun, Perry, and Ing-Simmons, 2016).</p>
 <div class="section level3">
 <h3 id="ginteractions-objects">
@@ -100,9 +100,12 @@ between two parallel sets of genomic ranges.</p>
 <span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt;     IQR, mad, sd, var, xtabs</span></span>
+<span><span class="co">#&gt; The following object is masked from 'package:utils':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     data</span></span>
 <span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     anyDuplicated, aperm, append, as.data.frame, basename, cbind, colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rownames, sapply, saveRDS, table, tapply, unique, unsplit, which.max, which.min</span></span>
+<span><span class="co">#&gt;     anyDuplicated, aperm, append, as.data.frame, basename, cbind, colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep, grepl, is.unsorted, lapply, Map, mapply, match, mget, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rownames, sapply, saveRDS, scale, sequence, table, tapply, transform, unique, unsplit, which.max, which.min</span></span>
 <span><span class="co">#&gt; Loading required package: S4Vectors</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Attaching package: 'S4Vectors'</span></span>
@@ -147,14 +150,14 @@ between two parallel sets of genomic ranges.</p>
 <span><span class="co">#&gt;   -------</span></span>
 <span><span class="co">#&gt;   regions: 2 ranges and 0 metadata columns</span></span>
 <span><span class="co">#&gt;   seqinfo: 1 sequence from an unspecified genome; no seqlengths</span></span></code></pre></div>
-<p>The <em><a href="https://bioconductor.org/packages/3.23/InteractionSet" class="external-link">InteractionSet</a></em>
+<p>The <em><a href="https://bioconductor.org/packages/3.24/InteractionSet" class="external-link">InteractionSet</a></em>
 package provides basic methods to interact with this class, but does not
 support tidy grammar principles.</p>
 </div>
 <div class="section level3">
 <h3 id="tidy-grammar-principles">Tidy grammar principles<a class="anchor" aria-label="anchor" href="#tidy-grammar-principles"></a>
 </h3>
-<p>The grammar of tidy genomic data transformation defined in <em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>
+<p>The grammar of tidy genomic data transformation defined in <em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>
 and available for <code>GInteractions</code> currently supports:</p>
 <ul>
 <li>
@@ -179,12 +182,12 @@ categorical/numerical variables.</li>
 </ul>
 </li>
 <li>
-<p><em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>
+<p><em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>
 verbs (for <code>PinnedGInteractions</code> and
 <code>AnchoredPinnedGInteractions</code>):</p>
 <ul>
 <li>Stretch specific anchors of genomic interactions to a given width
-with <code><a href="https://rdrr.io/pkg/plyranges/man/stretch.html" class="external-link">stretch()</a></code>;</li>
+with <code><a href="https://tidyomics.github.io/plyranges/reference/stretch.html" class="external-link">stretch()</a></code>;</li>
 <li>
 <code>anchor_*()</code> functions to control how stretching is
 performed;</li>
@@ -200,7 +203,7 @@ genomic interactions with <code><a href="https://rdrr.io/pkg/IRanges/man/intra-r
 <div class="section level2">
 <h2 id="importing-genomic-interactions-in-r">Importing genomic interactions in R<a class="anchor" aria-label="anchor" href="#importing-genomic-interactions-in-r"></a>
 </h2>
-<p><em><a href="https://bioconductor.org/packages/3.23/plyinteractions" class="external-link">plyinteractions</a></em>
+<p><em><a href="https://bioconductor.org/packages/3.24/plyinteractions" class="external-link">plyinteractions</a></em>
 provides a consistent interface for importing genomic interactions from
 <code>pairs</code> and <code>bedpe</code> files into GInteractions in R,
 following grammar of tidy data manipulation defined in the <em><a href="https://CRAN.R-project.org/package=tidyverse" class="external-link">tidyverse</a></em>
@@ -441,7 +444,7 @@ function (<code><a href="../reference/ginteractions-getters.html">anchors1()</a>
 <strong><em>anchors</em></strong>, when used for
 <code>GInteractions</code>, refers to the “left-hand” or “right-hand”
 <code>GRanges</code> when looking at genomic interactions. This is
-different from the <code>anchor</code> term used in <em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>.
+different from the <code>anchor</code> term used in <em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>.
 This is due to the fact that <em>“anchor”</em> is used in the chromatin
 interaction field to refer to the ends of a potential chromatin
 loop.</p>
@@ -503,7 +506,7 @@ corresponding fields from <code>GInteractions</code> objects.</p>
 <div class="section level3">
 <h3 id="extra-genomic-related-informations">Extra genomic-related informations<a class="anchor" aria-label="anchor" href="#extra-genomic-related-informations"></a>
 </h3>
-<p>Accessor functions provided in the <em><a href="https://bioconductor.org/packages/3.23/InteractionSet" class="external-link">InteractionSet</a></em>
+<p>Accessor functions provided in the <em><a href="https://bioconductor.org/packages/3.24/InteractionSet" class="external-link">InteractionSet</a></em>
 package (which defines the <code>GInteractions</code> class) are also
 available.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
@@ -524,17 +527,17 @@ available.</p>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/Seqinfo/man/seqinfo.html" class="external-link">seqinfo</a></span><span class="op">(</span><span class="va">gi</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Seqinfo object with 2 sequences from an unspecified genome; no seqlengths:</span></span>
-<span><span class="co">#&gt;   seqnames seqlengths isCircular genome</span></span>
-<span><span class="co">#&gt;   chr1             NA         NA   &lt;NA&gt;</span></span>
-<span><span class="co">#&gt;   chr2             NA         NA   &lt;NA&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt;   seqnames seqnames seqlengths isCircular genome</span></span>
+<span><span class="co">#&gt;   1            chr1         NA         NA   &lt;NA&gt;</span></span>
+<span><span class="co">#&gt;   2            chr2         NA         NA   &lt;NA&gt;</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="pinned-and-anchored-ginteractions">Pinned (and anchored) <code>GInteractions</code><a class="anchor" aria-label="anchor" href="#pinned-and-anchored-ginteractions"></a>
 </h2>
-<p>The anchoring approach developed in the <em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>
+<p>The anchoring approach developed in the <em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>
 package allows handy control over the way a <code>GRanges</code> object
-is extended when using the <code><a href="https://rdrr.io/pkg/plyranges/man/stretch.html" class="external-link">stretch()</a></code> function. To enable
+is extended when using the <code><a href="https://tidyomics.github.io/plyranges/reference/stretch.html" class="external-link">stretch()</a></code> function. To enable
 such workflow for <code>GInteractions</code>, two classes were defined:
 <code>PinnedGInteractions</code> and
 <code>AnchoredPinnedGInteractions</code>.</p>
@@ -545,7 +548,7 @@ such workflow for <code>GInteractions</code>, two classes were defined:
 </h3>
 <p>Pinning a <code>GInteractions</code> object is used to specify which
 set of anchors (i.e. <code>anchors1</code> or <code>anchors2</code>)
-should be affected by <em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>
+should be affected by <em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>
 functions.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## `pin_by` is used to pin a `GInteractions` on "first" (i.e. "left") or </span></span>
@@ -597,7 +600,7 @@ unpinned <code>GInteractions</code> object.</p>
 <h3 id="anchoredpinnedginteractions">
 <code>AnchoredPinnedGInteractions</code><a class="anchor" aria-label="anchor" href="#anchoredpinnedginteractions"></a>
 </h3>
-<p>Some <em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>
+<p>Some <em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>
 operations can work on “<code>anchored"</code>
 <strong><em><code>GRanges</code></em></strong>. To enable these
 operations either on <code>anchors1</code> or <code>anchors2</code> from
@@ -605,7 +608,7 @@ a <strong><em><code>GInteractions</code></em></strong> object,
 the”pinned” <code>anchors{12}</code> of the <code>GInteractions</code>
 object can be further “anchored”.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"first"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-anchor.html" class="external-link">anchor_5p</a></span><span class="op">(</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"first"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-anchor.html" class="external-link">anchor_5p</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; AnchoredPinnedGInteractions object with 4 interactions and 1 metadata column:</span></span>
 <span><span class="co">#&gt; Pinned on: anchors1 | Anchored by: 5p</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type</span></span>
@@ -623,22 +626,22 @@ object can be further “anchored”.</p>
 <h2 id="plyranges-operations-on-ginteractions">
 <code>plyranges</code> operations on <code>GInteractions</code><a class="anchor" aria-label="anchor" href="#plyranges-operations-on-ginteractions"></a>
 </h2>
-<p><em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>
+<p><em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>
 arithmetic functions are available for
 <code>(Anchored)PinnedGInteractions</code> objects.</p>
 <p><strong>Important note 1:</strong> <code>GInteractions</code> must be
 pinned to a specific anchor set (<code>anchors1</code> or
-<code>anchors2</code>) for <em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>
+<code>anchors2</code>) for <em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>
 functions to work. Please use <code><a href="../reference/ginteractions-pin.html">pin_by()</a></code> function to pin
 <code>GInteractions</code>.</p>
-<p><strong>Important note 2:</strong> the <code><a href="https://rdrr.io/pkg/plyranges/man/stretch.html" class="external-link">stretch()</a></code>
+<p><strong>Important note 2:</strong> the <code><a href="https://tidyomics.github.io/plyranges/reference/stretch.html" class="external-link">stretch()</a></code>
 function will behave on <code>PinnedGInteractions</code> and
 <code>AnchoredPinnedGInteractions</code> objects similarly to
 <code>GRanges</code> or <code>AnchoredGRanges</code> objects.</p>
 <div class="section level3">
 <h3 id="on-pinnedginteractions-objects">On <code>PinnedGInteractions</code> objects<a class="anchor" aria-label="anchor" href="#on-pinnedginteractions-objects"></a>
 </h3>
-<p><em><a href="https://bioconductor.org/packages/3.23/plyinteractions" class="external-link">plyinteractions</a></em>
+<p><em><a href="https://bioconductor.org/packages/3.24/plyinteractions" class="external-link">plyinteractions</a></em>
 extends the use of verbs developed in <code>plyranges</code> to
 manipulate <code>GRanges</code> objects, to ensure they work on
 <code>GInteractions</code>. The <code>GInteractions</code>
@@ -661,7 +664,7 @@ to specify which set of anchors should be affected by
 <span></span>
 <span><span class="co">## This pins the "first" (i.e. "left") anchors and strecthes them by 10bp</span></span>
 <span></span>
-<span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"first"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/stretch.html" class="external-link">stretch</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"first"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/stretch.html" class="external-link">stretch</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; PinnedGInteractions object with 4 interactions and 1 metadata column:</span></span>
 <span><span class="co">#&gt; Pinned on: anchors1</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type</span></span>
@@ -710,14 +713,14 @@ to specify which set of anchors should be affected by
 <h3 id="on-anchoredpinnedginteractions-objects">On <code>AnchoredPinnedGInteractions</code> objects<a class="anchor" aria-label="anchor" href="#on-anchoredpinnedginteractions-objects"></a>
 </h3>
 <p>When a pinned <code>GInteractions</code> is further anchored,
-<code>stretch</code>ing with <em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>
+<code>stretch</code>ing with <em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>
 relies on the anchoring:</p>
 <p><img src="../reference/figures/stretch.png"></p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## This pins the "first" (i.e. "left") anchors and strecthes them by 10bp, </span></span>
 <span><span class="co">## with the "first" anchors being anchored at their **start**. </span></span>
 <span></span>
-<span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"first"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-anchor.html" class="external-link">anchor_start</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/stretch.html" class="external-link">stretch</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"first"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-anchor.html" class="external-link">anchor_start</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/stretch.html" class="external-link">stretch</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; PinnedGInteractions object with 4 interactions and 1 metadata column:</span></span>
 <span><span class="co">#&gt; Pinned on: anchors1</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type</span></span>
@@ -733,7 +736,7 @@ relies on the anchoring:</p>
 <span><span class="co">## This pins the "first" (i.e. "left") anchors and strecthes them by 10bp, </span></span>
 <span><span class="co">## with the "first" anchors being anchored at their **center**. </span></span>
 <span></span>
-<span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"first"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-anchor.html" class="external-link">anchor_center</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/stretch.html" class="external-link">stretch</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"first"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-anchor.html" class="external-link">anchor_center</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/stretch.html" class="external-link">stretch</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; PinnedGInteractions object with 4 interactions and 1 metadata column:</span></span>
 <span><span class="co">#&gt; Pinned on: anchors1</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type</span></span>
@@ -751,7 +754,7 @@ relies on the anchoring:</p>
 <h2 id="dplyr-operations-on-ginteractions">
 <code>dplyr</code> operations on <code>GInteractions</code><a class="anchor" aria-label="anchor" href="#dplyr-operations-on-ginteractions"></a>
 </h2>
-<p><em><a href="https://bioconductor.org/packages/3.23/plyinteractions" class="external-link">plyinteractions</a></em>
+<p><em><a href="https://bioconductor.org/packages/3.24/plyinteractions" class="external-link">plyinteractions</a></em>
 provides a set of verbs for developing analysis pipelines based on
 <code>GInteractions</code> objects that represent genomic interactions.
 The verbs extend <em><a href="https://CRAN.R-project.org/package=dplyr" class="external-link">dplyr</a></em>
@@ -1042,26 +1045,26 @@ results in the coercion of the selected columns into a
 <div class="section level2">
 <h2 id="overlapping-operations-on-ginteractions">Overlapping operations on <code>GInteractions</code><a class="anchor" aria-label="anchor" href="#overlapping-operations-on-ginteractions"></a>
 </h2>
-<p>Several operlapping functions defined in <em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>
+<p>Several operlapping functions defined in <em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>
 are available for <code>GInteractions</code>:</p>
 <ul>
 <li>
-<code><a href="https://rdrr.io/pkg/plyranges/man/ranges-overlaps.html" class="external-link">find_overlaps()</a></code>;</li>
+<code><a href="https://tidyomics.github.io/plyranges/reference/ranges-overlaps.html" class="external-link">find_overlaps()</a></code>;</li>
 <li>
-<code><a href="https://rdrr.io/pkg/plyranges/man/ranges-count-overlaps.html" class="external-link">count_overlaps()</a></code>;</li>
+<code><a href="https://tidyomics.github.io/plyranges/reference/ranges-count-overlaps.html" class="external-link">count_overlaps()</a></code>;</li>
 <li>
-<code><a href="https://rdrr.io/pkg/plyranges/man/ranges-filter-overlaps.html" class="external-link">filter_by_overlaps()</a></code> and
-<code><a href="https://rdrr.io/pkg/plyranges/man/ranges-filter-overlaps.html" class="external-link">filter_by_non_overlaps()</a></code>;</li>
+<code><a href="https://tidyomics.github.io/plyranges/reference/ranges-filter-overlaps.html" class="external-link">filter_by_overlaps()</a></code> and
+<code><a href="https://tidyomics.github.io/plyranges/reference/ranges-filter-overlaps.html" class="external-link">filter_by_non_overlaps()</a></code>;</li>
 <li>
-<code><a href="https://rdrr.io/pkg/plyranges/man/overlap-joins.html" class="external-link">join_overlap_left()</a></code>.</li>
+<code><a href="https://tidyomics.github.io/plyranges/reference/overlap-joins.html" class="external-link">join_overlap_left()</a></code>.</li>
 </ul>
 <p>All these functions can take a <code>GInteractions</code> query and a
 <code>GRanges</code> subject to perform overlapping operations, and
 <code>maxgap</code> and <code>minoverlap</code> arguments are available
 to refine the query.</p>
 <p>These functions are <strong>unstranded</strong> by default.
-<code><a href="https://rdrr.io/pkg/plyranges/man/ranges-overlaps.html" class="external-link">find_overlaps()</a></code>, <code><a href="https://rdrr.io/pkg/plyranges/man/ranges-count-overlaps.html" class="external-link">count_overlaps()</a></code> and
-<code><a href="https://rdrr.io/pkg/plyranges/man/overlap-joins.html" class="external-link">join_overlap_left()</a></code> functions have
+<code><a href="https://tidyomics.github.io/plyranges/reference/ranges-overlaps.html" class="external-link">find_overlaps()</a></code>, <code><a href="https://tidyomics.github.io/plyranges/reference/ranges-count-overlaps.html" class="external-link">count_overlaps()</a></code> and
+<code><a href="https://tidyomics.github.io/plyranges/reference/overlap-joins.html" class="external-link">join_overlap_left()</a></code> functions have
 <code>*_directed()</code> counterparts for when strandness is
 required.</p>
 <div class="section level3">
@@ -1078,7 +1081,7 @@ manner.</p>
 <span><span class="co">## This returns the `GInteractions` entries overlapping with a `GRanges`</span></span>
 <span><span class="co">## (with either of both anchors)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-overlaps.html" class="external-link">find_overlaps</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-overlaps.html" class="external-link">find_overlaps</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; GInteractions object with 3 interactions and 3 metadata columns:</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type      id.x      id.y</span></span>
 <span><span class="co">#&gt;           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;character&gt; &lt;integer&gt; &lt;integer&gt;</span></span>
@@ -1092,7 +1095,7 @@ manner.</p>
 <span><span class="co">## This overlap requires the same strandness between </span></span>
 <span><span class="co">## the `GInteractions` anchors and the `GRanges` object</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-overlaps.html" class="external-link">find_overlaps_directed</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-overlaps.html" class="external-link">find_overlaps_directed</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; GInteractions object with 2 interactions and 3 metadata columns:</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type      id.x      id.y</span></span>
 <span><span class="co">#&gt;           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;character&gt; &lt;integer&gt; &lt;integer&gt;</span></span>
@@ -1105,16 +1108,16 @@ manner.</p>
 <span><span class="co">## This counts how many times each entry in a `GInteractions` object </span></span>
 <span><span class="co">## overlaps with a `GRanges` object (with either of both anchors)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-count-overlaps.html" class="external-link">count_overlaps</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-count-overlaps.html" class="external-link">count_overlaps</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0 0 1 2</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-count-overlaps.html" class="external-link">count_overlaps_directed</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-count-overlaps.html" class="external-link">count_overlaps_directed</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 0 0 1 1</span></span>
 <span></span>
 <span><span class="co">## This filters a `GInteractions` object to only retain the entries </span></span>
 <span><span class="co">## overlapping (or not) with a `GRanges` (with either of both anchors)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-filter-overlaps.html" class="external-link">filter_by_overlaps</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-filter-overlaps.html" class="external-link">filter_by_overlaps</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; GInteractions object with 2 interactions and 2 metadata columns:</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type        id</span></span>
 <span><span class="co">#&gt;           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;character&gt; &lt;integer&gt;</span></span>
@@ -1124,7 +1127,7 @@ manner.</p>
 <span><span class="co">#&gt;   regions: 8 ranges and 0 metadata columns</span></span>
 <span><span class="co">#&gt;   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-filter-overlaps.html" class="external-link">filter_by_non_overlaps</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-filter-overlaps.html" class="external-link">filter_by_non_overlaps</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; GInteractions object with 2 interactions and 2 metadata columns:</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type        id</span></span>
 <span><span class="co">#&gt;           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;character&gt; &lt;integer&gt;</span></span>
@@ -1137,7 +1140,7 @@ manner.</p>
 <span><span class="co">## This performs a left join between `GInteractions` entries and</span></span>
 <span><span class="co">## a `GRanges` of interest (with/without considering strandness)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/overlap-joins.html" class="external-link">join_overlap_left</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/overlap-joins.html" class="external-link">join_overlap_left</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; GInteractions object with 5 interactions and 3 metadata columns:</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type      id.x      id.y</span></span>
 <span><span class="co">#&gt;           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;character&gt; &lt;integer&gt; &lt;integer&gt;</span></span>
@@ -1150,7 +1153,7 @@ manner.</p>
 <span><span class="co">#&gt;   regions: 8 ranges and 0 metadata columns</span></span>
 <span><span class="co">#&gt;   seqinfo: 2 sequences from an unspecified genome; no seqlengths</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/overlap-joins.html" class="external-link">join_overlap_left_directed</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/overlap-joins.html" class="external-link">join_overlap_left_directed</a></span><span class="op">(</span><span class="va">gi</span>, <span class="va">gr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; GInteractions object with 4 interactions and 3 metadata columns:</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type      id.x      id.y</span></span>
 <span><span class="co">#&gt;           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;character&gt; &lt;integer&gt; &lt;integer&gt;</span></span>
@@ -1172,7 +1175,7 @@ overlaps.</p>
 <code class="sourceCode R"><span><span class="co">## This returns the `GInteractions` entries for which </span></span>
 <span><span class="co">## the "first" anchor overlaps with a `GRanges`</span></span>
 <span></span>
-<span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"first"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-overlaps.html" class="external-link">find_overlaps</a></span><span class="op">(</span><span class="va">gr</span><span class="op">)</span></span>
+<span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"first"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-overlaps.html" class="external-link">find_overlaps</a></span><span class="op">(</span><span class="va">gr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; GInteractions object with 1 interaction and 3 metadata columns:</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type      id.x      id.y</span></span>
 <span><span class="co">#&gt;           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;character&gt; &lt;integer&gt; &lt;integer&gt;</span></span>
@@ -1184,7 +1187,7 @@ overlaps.</p>
 <span><span class="co">## This returns the `GInteractions` entries for which </span></span>
 <span><span class="co">## the "second" anchor overlaps with a `GRanges`</span></span>
 <span></span>
-<span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"second"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/plyranges/man/ranges-overlaps.html" class="external-link">find_overlaps</a></span><span class="op">(</span><span class="va">gr</span><span class="op">)</span></span>
+<span><span class="va">gi</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/ginteractions-pin.html">pin_by</a></span><span class="op">(</span><span class="st">"second"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://tidyomics.github.io/plyranges/reference/ranges-overlaps.html" class="external-link">find_overlaps</a></span><span class="op">(</span><span class="va">gr</span><span class="op">)</span></span>
 <span><span class="co">#&gt; GInteractions object with 2 interactions and 3 metadata columns:</span></span>
 <span><span class="co">#&gt;       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |        type      id.x      id.y</span></span>
 <span><span class="co">#&gt;           &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt;         &lt;Rle&gt; &lt;IRanges&gt;   &lt;Rle&gt; | &lt;character&gt; &lt;integer&gt; &lt;integer&gt;</span></span>
@@ -1198,7 +1201,7 @@ overlaps.</p>
 <div class="section level2">
 <h2 id="citing-plyinteractions">Citing <code>plyinteractions</code><a class="anchor" aria-label="anchor" href="#citing-plyinteractions"></a>
 </h2>
-<p>We hope that <em><a href="https://bioconductor.org/packages/3.23/plyinteractions" class="external-link">plyinteractions</a></em>
+<p>We hope that <em><a href="https://bioconductor.org/packages/3.24/plyinteractions" class="external-link">plyinteractions</a></em>
 will be useful for your research. Please use the following information
 to cite the package and the overall approach. Thank you!</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
@@ -1206,7 +1209,7 @@ to cite the package and the overall approach. Thank you!</p>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"plyinteractions"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; To cite package 'plyinteractions' in publications use:</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;   Serizay J (2026). _plyinteractions: Extending tidy verbs to genomic interactions_. R package version 1.9.2, &lt;https://github.com/js2264/plyinteractions&gt;.</span></span>
+<span><span class="co">#&gt;   Serizay J (2026). _plyinteractions: Extending tidy verbs to genomic interactions_. R package version 1.11.0, &lt;https://github.com/js2264/plyinteractions&gt;.</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -1214,32 +1217,32 @@ to cite the package and the overall approach. Thank you!</p>
 <span><span class="co">#&gt;     title = {plyinteractions: Extending tidy verbs to genomic interactions},</span></span>
 <span><span class="co">#&gt;     author = {Jacques Serizay},</span></span>
 <span><span class="co">#&gt;     year = {2026},</span></span>
-<span><span class="co">#&gt;     note = {R package version 1.9.2},</span></span>
+<span><span class="co">#&gt;     note = {R package version 1.11.0},</span></span>
 <span><span class="co">#&gt;     url = {https://github.com/js2264/plyinteractions},</span></span>
 <span><span class="co">#&gt;   }</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="acknowledgments">Acknowledgments<a class="anchor" aria-label="anchor" href="#acknowledgments"></a>
 </h2>
-<p>The <em><a href="https://bioconductor.org/packages/3.23/plyinteractions" class="external-link">plyinteractions</a></em>
+<p>The <em><a href="https://bioconductor.org/packages/3.24/plyinteractions" class="external-link">plyinteractions</a></em>
 package introduces tidy methods for the <code>GInteractions</code> class
-defined in the <em><a href="https://bioconductor.org/packages/3.23/InteractionSet" class="external-link">InteractionSet</a></em>
+defined in the <em><a href="https://bioconductor.org/packages/3.24/InteractionSet" class="external-link">InteractionSet</a></em>
 package (Lun, Perry, and Ing-Simmons, 2016).</p>
-<p>The <em><a href="https://bioconductor.org/packages/3.23/plyinteractions" class="external-link">plyinteractions</a></em>
+<p>The <em><a href="https://bioconductor.org/packages/3.24/plyinteractions" class="external-link">plyinteractions</a></em>
 package follows tidy principles defined for tabular data and genomic
 ranges:</p>
 <ul>
 <li>
 <em><a href="https://CRAN.R-project.org/package=dplyr" class="external-link">dplyr</a></em> (Wickham,
-François, Henry, Müller, and Vaughan, 2023)</li>
+François, Henry, Müller, and Vaughan, 2026)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=rlang" class="external-link">rlang</a></em> (Henry
 and Wickham, 2026)</li>
 <li>
-<em><a href="https://bioconductor.org/packages/3.23/plyranges" class="external-link">plyranges</a></em>
+<em><a href="https://bioconductor.org/packages/3.24/plyranges" class="external-link">plyranges</a></em>
 (Lee, Stuart, Cook, Dianne, Lawrence, and Michael, 2019)</li>
 </ul>
-<p>The <em><a href="https://bioconductor.org/packages/3.23/plyinteractions" class="external-link">plyinteractions</a></em>
+<p>The <em><a href="https://bioconductor.org/packages/3.24/plyinteractions" class="external-link">plyinteractions</a></em>
 package (Serizay, 2026) was written using the following resources:</p>
 <ul>
 <li>R (R Core Team, 2026)</li>
@@ -1250,18 +1253,18 @@ package (Serizay, 2026) was written using the following resources:</p>
 resources:</p>
 <ul>
 <li>
-<em><a href="https://bioconductor.org/packages/3.23/BiocStyle" class="external-link">BiocStyle</a></em>
-(Oleś, 2025)</li>
+<em><a href="https://bioconductor.org/packages/3.24/BiocStyle" class="external-link">BiocStyle</a></em>
+(Oleś, 2026)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=knitr" class="external-link">knitr</a></em> (Xie,
-2025)</li>
+2026)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=RefManageR" class="external-link">RefManageR</a></em>
 (McLean, 2017)</li>
 <li>
 <em><a href="https://CRAN.R-project.org/package=rmarkdown" class="external-link">rmarkdown</a></em>
 (Allaire, Xie, Dervieux, McPherson, Luraschi, Ushey, Atkins, Wickham,
-Cheng, Chang, and Iannone, 2025)</li>
+Cheng, Chang, and Iannone, 2026)</li>
 </ul>
 </div>
 <div class="section level2">
@@ -1270,105 +1273,105 @@ Cheng, Chang, and Iannone, 2025)</li>
 <p><code>R</code> session information:</p>
 <pre><code><span><span class="co">#&gt; <span style="color: #00BBBB; font-weight: bold;">─ Session info ───────────────────────────────────────────────────────────────────────────────────────────────────────</span></span></span>
 <span><span class="co">#&gt;  <span style="color: #555555; font-style: italic;">setting </span> <span style="color: #555555; font-style: italic;">value</span></span></span>
-<span><span class="co">#&gt;  version  R Under development (unstable) (2026-01-08 r89289)</span></span>
-<span><span class="co">#&gt;  os       Ubuntu 24.04.3 LTS</span></span>
+<span><span class="co">#&gt;  version  R version 4.6.1 (2026-06-24)</span></span>
+<span><span class="co">#&gt;  os       Ubuntu 24.04.4 LTS</span></span>
 <span><span class="co">#&gt;  system   x86_64, linux-gnu</span></span>
 <span><span class="co">#&gt;  ui       X11</span></span>
 <span><span class="co">#&gt;  language en</span></span>
 <span><span class="co">#&gt;  collate  en_US.UTF-8</span></span>
 <span><span class="co">#&gt;  ctype    en_US.UTF-8</span></span>
 <span><span class="co">#&gt;  tz       UTC</span></span>
-<span><span class="co">#&gt;  date     2026-01-11</span></span>
-<span><span class="co">#&gt;  pandoc   3.8.3 @ /usr/bin/ (via rmarkdown)</span></span>
-<span><span class="co">#&gt;  quarto   1.8.26 @ /usr/local/bin/quarto</span></span>
+<span><span class="co">#&gt;  date     2026-10-03</span></span>
+<span><span class="co">#&gt;  pandoc   3.11 @ /usr/bin/ (via rmarkdown)</span></span>
+<span><span class="co">#&gt;  quarto   1.10.18 @ /usr/local/bin/quarto</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB; font-weight: bold;">─ Packages ───────────────────────────────────────────────────────────────────────────────────────────────────────────</span></span></span>
 <span><span class="co">#&gt;  <span style="color: #555555; font-style: italic;">package             </span> <span style="color: #555555; font-style: italic;">*</span> <span style="color: #555555; font-style: italic;">version  </span> <span style="color: #555555; font-style: italic;">date (UTC)</span> <span style="color: #555555; font-style: italic;">lib</span> <span style="color: #555555; font-style: italic;">source</span></span></span>
-<span><span class="co">#&gt;  abind                  1.4-8     <span style="color: #555555;">2024-09-12</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  backports              1.5.0     <span style="color: #555555;">2024-05-23</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  bibtex                 0.5.1     <span style="color: #555555;">2023-01-26</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  Biobase              * 2.71.0    <span style="color: #555555;">2025-10-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  BiocGenerics         * 0.57.0    <span style="color: #555555;">2025-10-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  BiocIO                 1.21.0    <span style="color: #555555;">2025-10-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  BiocManager            1.30.27   <span style="color: #555555;">2025-11-14</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  BiocParallel           1.45.0    <span style="color: #555555;">2025-10-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  BiocStyle            * 2.39.0    <span style="color: #555555;">2025-10-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  Biostrings             2.79.4    <span style="color: #555555;">2026-01-07</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  bitops                 1.0-9     <span style="color: #555555;">2024-10-03</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  bookdown               0.46      <span style="color: #555555;">2025-12-05</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  bslib                  0.9.0     <span style="color: #555555;">2025-01-30</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  cachem                 1.1.0     <span style="color: #555555;">2024-05-16</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  cigarillo              1.1.0     <span style="color: #555555;">2025-10-31</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  cli                    3.6.5     <span style="color: #555555;">2025-04-23</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  codetools              0.2-20    <span style="color: #555555;">2024-03-31</span> <span style="color: #555555;">[3]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  crayon                 1.5.3     <span style="color: #555555;">2024-06-20</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  curl                   7.0.0     <span style="color: #555555;">2025-08-19</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  DelayedArray           0.37.0    <span style="color: #555555;">2025-10-31</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  desc                   1.4.3     <span style="color: #555555;">2023-12-10</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  digest                 0.6.39    <span style="color: #555555;">2025-11-19</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  dplyr                * 1.1.4     <span style="color: #555555;">2023-11-17</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  evaluate               1.0.5     <span style="color: #555555;">2025-08-27</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  fastmap                1.2.0     <span style="color: #555555;">2024-05-15</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  fs                     1.6.6     <span style="color: #555555;">2025-04-12</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  generics             * 0.1.4     <span style="color: #555555;">2025-05-09</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  GenomicAlignments      1.47.0    <span style="color: #555555;">2025-10-31</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  GenomicRanges        * 1.63.1    <span style="color: #555555;">2025-12-08</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  glue                   1.8.0     <span style="color: #555555;">2024-09-30</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  htmltools              0.5.9     <span style="color: #555555;">2025-12-04</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  htmlwidgets            1.6.4     <span style="color: #555555;">2023-12-06</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  httr                   1.4.7     <span style="color: #555555;">2023-08-15</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  InteractionSet       * 1.39.0    <span style="color: #555555;">2025-10-31</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  IRanges              * 2.45.0    <span style="color: #555555;">2025-10-31</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  jquerylib              0.1.4     <span style="color: #555555;">2021-04-26</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  jsonlite               2.0.0     <span style="color: #555555;">2025-03-27</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  knitr                  1.51      <span style="color: #555555;">2025-12-20</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  lattice                0.22-7    <span style="color: #555555;">2025-04-02</span> <span style="color: #555555;">[3]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  lifecycle              1.0.5     <span style="color: #555555;">2026-01-08</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  lubridate              1.9.4     <span style="color: #555555;">2024-12-08</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  magrittr               2.0.4     <span style="color: #555555;">2025-09-12</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  Matrix                 1.7-4     <span style="color: #555555;">2025-08-28</span> <span style="color: #555555;">[3]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  MatrixGenerics       * 1.23.0    <span style="color: #555555;">2025-10-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  matrixStats          * 1.5.0     <span style="color: #555555;">2025-01-07</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  otel                   0.2.0     <span style="color: #555555;">2025-08-29</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  pillar                 1.11.1    <span style="color: #555555;">2025-09-17</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  pkgconfig              2.0.3     <span style="color: #555555;">2019-09-22</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  pkgdown                2.2.0     <span style="color: #555555;">2025-11-06</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  plyinteractions      * 1.9.2     <span style="color: #555555;">2026-01-11</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor</span></span></span>
-<span><span class="co">#&gt;  plyr                   1.8.9     <span style="color: #555555;">2023-10-02</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  plyranges            * 1.31.1    <span style="color: #555555;">2025-11-07</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  R6                     2.6.1     <span style="color: #555555;">2025-02-15</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  ragg                   1.5.0     <span style="color: #555555;">2025-09-02</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  Rcpp                   1.1.1     <span style="color: #555555;">2026-01-10</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  RCurl                  1.98-1.17 <span style="color: #555555;">2025-03-22</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  RefManageR           * 1.4.0     <span style="color: #555555;">2022-09-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  restfulr               0.0.16    <span style="color: #555555;">2025-06-27</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  rjson                  0.2.23    <span style="color: #555555;">2024-09-16</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  rlang                  1.1.7     <span style="color: #555555;">2026-01-09</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  rmarkdown              2.30      <span style="color: #555555;">2025-09-28</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  Rsamtools              2.27.0    <span style="color: #555555;">2025-10-31</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  rtracklayer            1.71.3    <span style="color: #555555;">2025-12-14</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  S4Arrays               1.11.1    <span style="color: #555555;">2025-11-25</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  S4Vectors            * 0.49.0    <span style="color: #555555;">2025-10-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  sass                   0.4.10    <span style="color: #555555;">2025-04-11</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  Seqinfo              * 1.1.0     <span style="color: #555555;">2025-10-31</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  sessioninfo          * 1.2.3     <span style="color: #555555;">2025-02-05</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  SparseArray            1.11.10   <span style="color: #555555;">2025-12-16</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  stringi                1.8.7     <span style="color: #555555;">2025-03-27</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  stringr                1.6.0     <span style="color: #555555;">2025-11-04</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  SummarizedExperiment * 1.41.0    <span style="color: #555555;">2025-10-31</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  systemfonts            1.3.1     <span style="color: #555555;">2025-10-01</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  textshaping            1.0.4     <span style="color: #555555;">2025-10-10</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  tibble                 3.3.0     <span style="color: #555555;">2025-06-08</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  tidyselect             1.2.1     <span style="color: #555555;">2024-03-11</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  timechange             0.3.0     <span style="color: #555555;">2024-01-18</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  utf8                   1.2.6     <span style="color: #555555;">2025-06-08</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  vctrs                  0.6.5     <span style="color: #555555;">2023-12-01</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  withr                  3.0.2     <span style="color: #555555;">2024-10-28</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  xfun                   0.55      <span style="color: #555555;">2025-12-16</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  XML                    3.99-0.20 <span style="color: #555555;">2025-11-08</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  xml2                   1.5.1     <span style="color: #555555;">2025-12-01</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  XVector                0.51.0    <span style="color: #555555;">2025-10-31</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.23 (R 4.6.0)</span></span></span>
-<span><span class="co">#&gt;  yaml                   2.3.12    <span style="color: #555555;">2025-12-10</span> <span style="color: #555555;">[2]</span> <span style="color: #555555;">CRAN (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  abind                  1.4-8     <span style="color: #555555;">2024-09-12</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  bibtex                 0.5.3     <span style="color: #555555;">2026-09-22</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  Biobase              * 2.73.2    <span style="color: #555555;">2026-07-29</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  BiocBaseUtils          1.15.1    <span style="color: #555555;">2026-05-10</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  BiocGenerics         * 0.59.12   <span style="color: #555555;">2026-08-11</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  BiocIO                 1.23.3    <span style="color: #555555;">2026-04-29</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  BiocManager            1.30.27   <span style="color: #555555;">2025-11-14</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  BiocParallel           1.47.0    <span style="color: #555555;">2026-04-28</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  BiocStyle            * 2.41.0    <span style="color: #555555;">2026-04-28</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  Biostrings             2.81.9    <span style="color: #555555;">2026-09-06</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  bitops                 1.1-0     <span style="color: #555555;">2026-07-30</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  bookdown               0.48      <span style="color: #555555;">2026-08-28</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  bslib                  0.12.0    <span style="color: #555555;">2026-08-04</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  cachem                 1.1.0     <span style="color: #555555;">2024-05-16</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  cigarillo              1.3.1     <span style="color: #555555;">2026-07-13</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  cli                    3.6.6     <span style="color: #555555;">2026-04-09</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  codetools              0.2-20    <span style="color: #555555;">2024-03-31</span> <span style="color: #555555;">[3]</span> <span style="color: #555555;">CRAN (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  crayon                 1.5.3     <span style="color: #555555;">2024-06-20</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  curl                   8.0.0     <span style="color: #555555;">2026-08-25</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  DelayedArray           0.39.8    <span style="color: #555555;">2026-09-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  desc                   1.4.3     <span style="color: #555555;">2023-12-10</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  digest                 0.6.39    <span style="color: #555555;">2025-11-19</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  dplyr                * 1.2.1     <span style="color: #555555;">2026-04-03</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  evaluate               1.0.5     <span style="color: #555555;">2025-08-27</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  fastmap                1.2.0     <span style="color: #555555;">2024-05-15</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  fs                     2.1.0     <span style="color: #555555;">2026-04-18</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  generics             * 0.1.4     <span style="color: #555555;">2025-05-09</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  GenomicAlignments      1.49.2    <span style="color: #555555;">2026-09-02</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  GenomicRanges        * 1.65.4    <span style="color: #555555;">2026-09-02</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  glue                   1.8.1     <span style="color: #555555;">2026-04-17</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  htmltools              0.5.9     <span style="color: #555555;">2025-12-04</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  htmlwidgets            1.6.4     <span style="color: #555555;">2023-12-06</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  httr                   1.4.9     <span style="color: #555555;">2026-09-01</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  InteractionSet       * 1.41.0    <span style="color: #555555;">2026-04-28</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  IRanges              * 2.47.5    <span style="color: #555555;">2026-08-27</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  jquerylib              0.1.4     <span style="color: #555555;">2021-04-26</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  jsonlite               2.0.0     <span style="color: #555555;">2025-03-27</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  knitr                  1.52      <span style="color: #555555;">2026-09-06</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  lattice                0.23-1    <span style="color: #555555;">2026-08-12</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  lifecycle              1.0.5     <span style="color: #555555;">2026-01-08</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  lubridate              1.9.5     <span style="color: #555555;">2026-02-04</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  magrittr               2.0.5     <span style="color: #555555;">2026-04-04</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  Matrix                 1.7-6     <span style="color: #555555;">2026-07-25</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  MatrixGenerics       * 1.25.0    <span style="color: #555555;">2026-04-28</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  matrixStats          * 1.5.0     <span style="color: #555555;">2025-01-07</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  otel                   0.2.0     <span style="color: #555555;">2025-08-29</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  pillar                 1.11.1    <span style="color: #555555;">2025-09-17</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  pkgconfig              2.0.3     <span style="color: #555555;">2019-09-22</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  pkgdown                2.2.1     <span style="color: #555555;">2026-07-07</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  plyinteractions      * 1.11.0    <span style="color: #555555;">2026-10-03</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor</span></span></span>
+<span><span class="co">#&gt;  plyr                   1.8.9     <span style="color: #555555;">2023-10-02</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  plyranges            * 1.33.2    <span style="color: #555555;">2026-07-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  R6                     2.6.1     <span style="color: #555555;">2025-02-15</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  ragg                   1.5.2     <span style="color: #555555;">2026-03-23</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  Rcpp                   1.1.2     <span style="color: #555555;">2026-07-05</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  RCurl                  1.98-1.20 <span style="color: #555555;">2026-08-21</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  RefManageR           * 1.4.0     <span style="color: #555555;">2022-09-30</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  restfulr               0.0.17    <span style="color: #555555;">2026-06-11</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  rjson                  0.2.23    <span style="color: #555555;">2024-09-16</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  rlang                  1.3.0     <span style="color: #555555;">2026-07-05</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  rmarkdown              2.32      <span style="color: #555555;">2026-09-01</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  Rsamtools              2.29.0    <span style="color: #555555;">2026-04-28</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  rtracklayer            1.73.0    <span style="color: #555555;">2026-04-28</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  S4Arrays               1.13.2    <span style="color: #555555;">2026-09-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  S4Vectors            * 0.51.10   <span style="color: #555555;">2026-09-16</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  sass                   0.4.10    <span style="color: #555555;">2025-04-11</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  Seqinfo              * 1.3.2     <span style="color: #555555;">2026-08-27</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  sessioninfo          * 1.2.4     <span style="color: #555555;">2026-06-04</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  SparseArray            1.13.4    <span style="color: #555555;">2026-09-30</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  stringi                1.8.9     <span style="color: #555555;">2026-08-04</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  stringr                1.6.0     <span style="color: #555555;">2025-11-04</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  SummarizedExperiment * 1.43.0    <span style="color: #555555;">2026-04-28</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  systemfonts            1.3.2     <span style="color: #555555;">2026-03-05</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  textshaping            1.0.5     <span style="color: #555555;">2026-03-06</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  tibble                 3.3.1     <span style="color: #555555;">2026-01-11</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  tidyselect             1.2.1     <span style="color: #555555;">2024-03-11</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  timechange             0.4.0     <span style="color: #555555;">2026-01-29</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  utf8                   1.2.6     <span style="color: #555555;">2025-06-08</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  vctrs                  0.7.3     <span style="color: #555555;">2026-04-11</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  withr                  3.0.3     <span style="color: #555555;">2026-06-19</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  xfun                   0.61      <span style="color: #555555;">2026-09-16</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  XML                    3.99-0.25 <span style="color: #555555;">2026-09-27</span> <span style="color: #555555;">[1]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  xml2                   1.6.0     <span style="color: #555555;">2026-06-22</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
+<span><span class="co">#&gt;  XVector                0.53.0    <span style="color: #555555;">2026-04-28</span> <span style="color: #555555;">[1]</span> <span style="color: #555555;">Bioconductor 3.24 (R 4.6.1)</span></span></span>
+<span><span class="co">#&gt;  yaml                   2.3.12    <span style="color: #555555;">2025-12-10</span> <span style="color: #555555;">[2]</span> <span style="color: #BB00BB; font-weight: bold;">RSPM (R 4.6.0)</span></span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; <span style="color: #555555;"> [1] /__w/_temp/Library</span></span></span>
 <span><span class="co">#&gt; <span style="color: #555555;"> [2] /usr/local/lib/R/site-library</span></span></span>
@@ -1381,18 +1384,16 @@ Cheng, Chang, and Iannone, 2025)</li>
 <h2 id="bibliography">Bibliography<a class="anchor" aria-label="anchor" href="#bibliography"></a>
 </h2>
 <p>
-<a id="bib-allaire2025rmarkdown"></a><a href="#cite-allaire2025rmarkdown">[1]</a><cite>
+<a id="bib-allaire2026rmarkdown"></a><a href="#cite-allaire2026rmarkdown">[1]</a><cite>
 J. Allaire, Y. Xie, C. Dervieux, et al. <em>rmarkdown: Dynamic Documents
-for R</em>. R package version 2.30. 2025. URL:
+for R</em>. R package version 2.32. 2026. URL:
 <a href="https://github.com/rstudio/rmarkdown" class="external-link">https://github.com/rstudio/rmarkdown</a>.</cite>
 </p>
 <p>
 <a id="bib-henry2026rlang"></a><a href="#cite-henry2026rlang">[2]</a><cite>
 L. Henry and H. Wickham. <em>rlang: Functions for Base Types and Core R
-and ‘Tidyverse’ Features</em>. R package version 1.1.7. 2026. DOI:
-<a href="https://doi.org/10.32614/CRAN.package.rlang" class="external-link">10.32614/CRAN.package.rlang</a>.
-URL:
-<a href="https://CRAN.R-project.org/package=rlang" class="external-link">https://CRAN.R-project.org/package=rlang</a>.</cite>
+and ‘Tidyverse’ Features</em>. R package version 1.3.0. 2026. URL:
+<a href="https://rlang.r-lib.org" class="external-link">https://rlang.r-lib.org</a>.</cite>
 </p>
 <p>
 <a id="bib-lee2019plyranges"></a><a href="#cite-lee2019plyranges">[3]</a><cite>
@@ -1414,9 +1415,9 @@ References in R”. In: <em>The Journal of Open Source Software</em>
 <a href="https://doi.org/10.21105/joss.00338" class="external-link">10.21105/joss.00338</a>.</cite>
 </p>
 <p>
-<a id="bib-ole2025biocstyle"></a><a href="#cite-ole2025biocstyle">[6]</a><cite>
+<a id="bib-ole2026biocstyle"></a><a href="#cite-ole2026biocstyle">[6]</a><cite>
 A. Oleś. <em>BiocStyle: Standard styles for vignettes and other
-Bioconductor documents</em>. R package version 2.39.0. 2025. DOI:
+Bioconductor documents</em>. R package version 2.41.0. 2026. DOI:
 <a href="https://doi.org/10.18129/B9.bioc.BiocStyle" class="external-link">10.18129/B9.bioc.BiocStyle</a>.
 URL:
 <a href="https://bioconductor.org/packages/BiocStyle" class="external-link">https://bioconductor.org/packages/BiocStyle</a>.</cite>
@@ -1433,21 +1434,19 @@ URL:
 <p>
 <a id="bib-serizay2026plyinteractions"></a><a href="#cite-serizay2026plyinteractions">[8]</a><cite>
 J. Serizay. <em>plyinteractions: Extending tidy verbs to genomic
-interactions</em>. R package version 1.9.2. 2026. URL:
+interactions</em>. R package version 1.11.0. 2026. URL:
 <a href="https://github.com/js2264/plyinteractions" class="external-link">https://github.com/js2264/plyinteractions</a>.</cite>
 </p>
 <p>
-<a id="bib-wickham2023dplyr"></a><a href="#cite-wickham2023dplyr">[9]</a><cite>
+<a id="bib-wickham2026dplyr"></a><a href="#cite-wickham2026dplyr">[9]</a><cite>
 H. Wickham, R. François, L. Henry, et al. <em>dplyr: A Grammar of Data
-Manipulation</em>. R package version 1.1.4. 2023. DOI:
-<a href="https://doi.org/10.32614/CRAN.package.dplyr" class="external-link">10.32614/CRAN.package.dplyr</a>.
-URL:
-<a href="https://CRAN.R-project.org/package=dplyr" class="external-link">https://CRAN.R-project.org/package=dplyr</a>.</cite>
+Manipulation</em>. R package version 1.2.1. 2026. URL:
+<a href="https://dplyr.tidyverse.org" class="external-link">https://dplyr.tidyverse.org</a>.</cite>
 </p>
 <p>
-<a id="bib-xie2025knitr"></a><a href="#cite-xie2025knitr">[10]</a><cite>
+<a id="bib-xie2026knitr"></a><a href="#cite-xie2026knitr">[10]</a><cite>
 Y. Xie. <em>knitr: A General-Purpose Package for Dynamic Report
-Generation in R</em>. R package version 1.51. 2025. URL:
+Generation in R</em>. R package version 1.52. 2026. URL:
 <a href="https://yihui.org/knitr/" class="external-link">https://yihui.org/knitr/</a>.</cite>
 </p>
 </div>
@@ -1462,7 +1461,7 @@ Generation in R</em>. R package version 1.51. 2025. URL:
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

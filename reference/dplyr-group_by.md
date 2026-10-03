@@ -65,10 +65,10 @@ gi |> group_by(end1)
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.479025
-#>   [2]  0.432171
-#>   [3]  0.706434
-#>   [4]  0.948577
+#>   [1] 0.9805397
+#>   [2] 0.7415215
+#>   [3] 0.0514463
+#>   [4] 0.5302125
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -108,10 +108,10 @@ gi |> group_by(end1, type)
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.479025
-#>   [2]  0.432171
-#>   [3]  0.706434
-#>   [4]  0.948577
+#>   [1] 0.9805397
+#>   [2] 0.7415215
+#>   [3] 0.0514463
+#>   [4] 0.5302125
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -138,10 +138,10 @@ gi |> group_by(class = c(1, 2, 1, 2))
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score     class
 #>       <numeric> <numeric>
-#>   [1]  0.479025         1
-#>   [2]  0.432171         2
-#>   [3]  0.706434         1
-#>   [4]  0.948577         2
+#>   [1] 0.9805397         1
+#>   [2] 0.7415215         2
+#>   [3] 0.0514463         1
+#>   [4] 0.5302125         2
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -187,10 +187,10 @@ ggi
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score     class
 #>       <numeric> <numeric>
-#>   [1]  0.479025         1
-#>   [2]  0.432171         2
-#>   [3]  0.706434         1
-#>   [4]  0.948577         2
+#>   [1] 0.9805397         1
+#>   [2] 0.7415215         2
+#>   [3] 0.0514463         1
+#>   [4] 0.5302125         2
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -205,10 +205,10 @@ ungroup(ggi, type)
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score     class
 #>       <numeric> <numeric>
-#>   [1]  0.479025         1
-#>   [2]  0.432171         2
-#>   [3]  0.706434         1
-#>   [4]  0.948577         2
+#>   [1] 0.9805397         1
+#>   [2] 0.7415215         2
+#>   [3] 0.0514463         1
+#>   [4] 0.5302125         2
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -223,10 +223,10 @@ ungroup(ggi, class)
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score     class
 #>       <numeric> <numeric>
-#>   [1]  0.479025         1
-#>   [2]  0.432171         2
-#>   [3]  0.706434         1
-#>   [4]  0.948577         2
+#>   [1] 0.9805397         1
+#>   [2] 0.7415215         2
+#>   [3] 0.0514463         1
+#>   [4] 0.5302125         2
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths

@@ -71,10 +71,10 @@ gi |> replace_anchors(2, value = anchors1(gi))
 #>   [4]      chr1     11-30       * ---      chr1     11-30       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.402881
-#>   [2]  0.769630
-#>   [3]  0.119485
-#>   [4]  0.194695
+#>   [1] 0.3900314
+#>   [2] 0.0200652
+#>   [3] 0.3769709
+#>   [4] 0.5599128
 #>   -------
 #>   regions: 2 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -89,10 +89,10 @@ gi |> replace_anchors(1, value = anchors2(gi))
 #>   [4]      chr2     51-60       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.402881
-#>   [2]  0.769630
-#>   [3]  0.119485
-#>   [4]  0.194695
+#>   [1] 0.3900314
+#>   [2] 0.0200652
+#>   [3] 0.3769709
+#>   [4] 0.5599128
 #>   -------
 #>   regions: 3 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -109,10 +109,10 @@ gi |> replace_anchors(1, value = GenomicRanges::GRanges(c(
 #>   [4]      chr1       4-5       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.402881
-#>   [2]  0.769630
-#>   [3]  0.119485
-#>   [4]  0.194695
+#>   [1] 0.3900314
+#>   [2] 0.0200652
+#>   [3] 0.3769709
+#>   [4] 0.5599128
 #>   -------
 #>   regions: 7 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -132,10 +132,10 @@ gi |> pin_by(1) |> replace_anchors(value = anchors1(gi))
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.402881
-#>   [2]  0.769630
-#>   [3]  0.119485
-#>   [4]  0.194695
+#>   [1] 0.3900314
+#>   [2] 0.0200652
+#>   [3] 0.3769709
+#>   [4] 0.5599128
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -150,10 +150,10 @@ gi |> replace_anchors(1, value = anchors2(gi))
 #>   [4]      chr2     51-60       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.402881
-#>   [2]  0.769630
-#>   [3]  0.119485
-#>   [4]  0.194695
+#>   [1] 0.3900314
+#>   [2] 0.0200652
+#>   [3] 0.3769709
+#>   [4] 0.5599128
 #>   -------
 #>   regions: 3 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -177,10 +177,10 @@ gi |>
 #>   [4]      chr1       4-5       * ---      chr2       4-5       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.402881
-#>   [2]  0.769630
-#>   [3]  0.119485
-#>   [4]  0.194695
+#>   [1] 0.3900314
+#>   [2] 0.0200652
+#>   [3] 0.3769709
+#>   [4] 0.5599128
 #>   -------
 #>   regions: 8 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths

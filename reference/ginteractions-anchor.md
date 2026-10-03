@@ -77,10 +77,10 @@ gi
 #> GInteractions object with 4 interactions and 2 metadata columns:
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     11-20       + ---      chr1     21-30       + | 0.0280610
-#>   [2]      chr1     11-20       + ---      chr1     51-55       + | 0.4659872
-#>   [3]      chr1     11-30       - ---      chr1     51-55       - | 0.3900314
-#>   [4]      chr1     11-30       - ---      chr2     51-60       - | 0.0200652
+#>   [1]      chr1     11-20       + ---      chr1     21-30       + |  0.461186
+#>   [2]      chr1     11-20       + ---      chr1     51-55       + |  0.315242
+#>   [3]      chr1     11-30       - ---      chr1     51-55       - |  0.174676
+#>   [4]      chr1     11-30       - ---      chr2     51-60       - |  0.531574
 #>              type
 #>       <character>
 #>   [1]         cis
@@ -100,10 +100,10 @@ gi |> pin_by("second") |> anchor_end()
 #> Pinned on: anchors2 | Anchored by: end
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     11-20       + ---      chr1     21-30       + | 0.0280610
-#>   [2]      chr1     11-20       + ---      chr1     51-55       + | 0.4659872
-#>   [3]      chr1     11-30       - ---      chr1     51-55       - | 0.3900314
-#>   [4]      chr1     11-30       - ---      chr2     51-60       - | 0.0200652
+#>   [1]      chr1     11-20       + ---      chr1     21-30       + |  0.461186
+#>   [2]      chr1     11-20       + ---      chr1     51-55       + |  0.315242
+#>   [3]      chr1     11-30       - ---      chr1     51-55       - |  0.174676
+#>   [4]      chr1     11-30       - ---      chr2     51-60       - |  0.531574
 #>              type
 #>       <character>
 #>   [1]         cis
@@ -119,10 +119,10 @@ gi |> pin_by("first") |> anchor_start()
 #> Pinned on: anchors1 | Anchored by: start
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     11-20       + ---      chr1     21-30       + | 0.0280610
-#>   [2]      chr1     11-20       + ---      chr1     51-55       + | 0.4659872
-#>   [3]      chr1     11-30       - ---      chr1     51-55       - | 0.3900314
-#>   [4]      chr1     11-30       - ---      chr2     51-60       - | 0.0200652
+#>   [1]      chr1     11-20       + ---      chr1     21-30       + |  0.461186
+#>   [2]      chr1     11-20       + ---      chr1     51-55       + |  0.315242
+#>   [3]      chr1     11-30       - ---      chr1     51-55       - |  0.174676
+#>   [4]      chr1     11-30       - ---      chr2     51-60       - |  0.531574
 #>              type
 #>       <character>
 #>   [1]         cis
@@ -140,10 +140,10 @@ gi |>
 #> Pinned on: anchors2
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1      9-22       + ---      chr1     23-30       + | 0.0280610
-#>   [2]      chr1      9-22       + ---      chr1     53-55       + | 0.4659872
-#>   [3]      chr1      9-32       - ---      chr1     51-53       - | 0.3900314
-#>   [4]      chr1      9-32       - ---      chr2     51-58       - | 0.0200652
+#>   [1]      chr1      9-22       + ---      chr1     23-30       + |  0.461186
+#>   [2]      chr1      9-22       + ---      chr1     53-55       + |  0.315242
+#>   [3]      chr1      9-32       - ---      chr1     51-53       - |  0.174676
+#>   [4]      chr1      9-32       - ---      chr2     51-58       - |  0.531574
 #>              type
 #>       <character>
 #>   [1]         cis

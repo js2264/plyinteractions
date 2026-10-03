@@ -1,7 +1,7 @@
-pandoc: 3.8.3
-pkgdown: 2.2.0
+pandoc: '3.11'
+pkgdown: 2.2.1
 pkgdown_sha: ~
 articles:
   plyinteractions: plyinteractions.html
   process_pairs: process_pairs.html
-last_built: 2026-01-11T00:42Z
+last_built: 2026-10-03T16:14Z

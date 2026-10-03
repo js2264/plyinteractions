@@ -48,8 +48,9 @@
   [`ungroup(`*`<GroupedGInteractions>`*`)`](dplyr-group_by.md) : Group
   GInteractions by columns
 
-- [`mutate(`*`<GInteractions>`*`)`](dplyr-mutate.md) : Mutate columns
-  from a GInteractions object
+- [`mutate(`*`<GInteractions>`*`)`](dplyr-mutate.md)
+  [`mutate(`*`<GroupedGInteractions>`*`)`](dplyr-mutate.md) : Mutate
+  columns from a GInteractions object
 
 - [`rename(`*`<GInteractions>`*`)`](dplyr-rename.md) :
 
@@ -159,6 +160,9 @@
   [`write_pairs()`](ginteractions-export.md) :
 
   Export GInteractions as `bedpe` or `pairs` files
+
+- [`as_tibble(`*`<GInteractions>`*`)`](ginteractions-as_tibble.md) :
+  Turn a GInteractions object into a tibble
 
 ## Misc
 

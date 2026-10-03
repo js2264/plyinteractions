@@ -116,10 +116,10 @@ gi |> pin_by("first")
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.718270
-#>   [2]  0.241314
-#>   [3]  0.547043
-#>   [4]  0.834802
+#>   [1]  0.493637
+#>   [2]  0.779309
+#>   [3]  0.204178
+#>   [4]  0.713397
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -135,10 +135,10 @@ gi |> pin_first()
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.718270
-#>   [2]  0.241314
-#>   [3]  0.547043
-#>   [4]  0.834802
+#>   [1]  0.493637
+#>   [2]  0.779309
+#>   [3]  0.204178
+#>   [4]  0.713397
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -154,10 +154,10 @@ gi |> pin_anchors1()
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.718270
-#>   [2]  0.241314
-#>   [3]  0.547043
-#>   [4]  0.834802
+#>   [1]  0.493637
+#>   [2]  0.779309
+#>   [3]  0.204178
+#>   [4]  0.713397
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -177,10 +177,10 @@ gi |> pin_by("second")
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.718270
-#>   [2]  0.241314
-#>   [3]  0.547043
-#>   [4]  0.834802
+#>   [1]  0.493637
+#>   [2]  0.779309
+#>   [3]  0.204178
+#>   [4]  0.713397
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -196,10 +196,10 @@ gi |> pin_second()
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.718270
-#>   [2]  0.241314
-#>   [3]  0.547043
-#>   [4]  0.834802
+#>   [1]  0.493637
+#>   [2]  0.779309
+#>   [3]  0.204178
+#>   [4]  0.713397
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -215,10 +215,10 @@ gi |> pin_anchors2()
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.718270
-#>   [2]  0.241314
-#>   [3]  0.547043
-#>   [4]  0.834802
+#>   [1]  0.493637
+#>   [2]  0.779309
+#>   [3]  0.204178
+#>   [4]  0.713397
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
@@ -237,10 +237,10 @@ gi |> pin("second") |> unpin()
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.718270
-#>   [2]  0.241314
-#>   [3]  0.547043
-#>   [4]  0.834802
+#>   [1]  0.493637
+#>   [2]  0.779309
+#>   [3]  0.204178
+#>   [4]  0.713397
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths

@@ -72,10 +72,10 @@ gi
 #> GInteractions object with 4 interactions and 2 metadata columns:
 #>       seqnames1   ranges1 strand1     seqnames2   ranges2 strand2 |     score
 #>           <Rle> <IRanges>   <Rle>         <Rle> <IRanges>   <Rle> | <numeric>
-#>   [1]      chr1     11-20       + ---      chr1     21-30       + | 0.4035381
-#>   [2]      chr1     11-20       + ---      chr1     51-55       + | 0.0636615
-#>   [3]      chr1     11-30       - ---      chr1     51-55       - | 0.3887013
-#>   [4]      chr1     11-30       - ---      chr2     51-60       - | 0.9755478
+#>   [1]      chr1     11-20       + ---      chr1     21-30       + | 0.8746007
+#>   [2]      chr1     11-20       + ---      chr1     51-55       + | 0.1749406
+#>   [3]      chr1     11-30       - ---      chr1     51-55       - | 0.0342413
+#>   [4]      chr1     11-30       - ---      chr2     51-60       - | 0.3203857
 #>              type
 #>       <character>
 #>   [1]         cis
@@ -104,8 +104,8 @@ gi |> group_by(type) |> tally(wt = score)
 #> DataFrame with 2 rows and 2 columns
 #>          type         n
 #>   <character> <numeric>
-#> 1         cis  0.855901
-#> 2       trans  0.975548
+#> 1         cis  1.083783
+#> 2       trans  0.320386
 
 ####################################################################
 # 2. Count per groups
@@ -130,7 +130,7 @@ gi |> group_by(type, strand1) |> count(wt = score)
 #> DataFrame with 3 rows and 3 columns
 #>          type strand1         n
 #>   <character>   <Rle> <numeric>
-#> 1         cis       +  0.467200
-#> 2         cis       -  0.388701
-#> 3       trans       -  0.975548
+#> 1         cis       + 1.0495413
+#> 2         cis       - 0.0342413
+#> 3       trans       - 0.3203857
 ```

@@ -71,10 +71,10 @@ ggi
 #>   [4]      chr1     11-30       * ---      chr2     51-60       * |       trans
 #>           score
 #>       <numeric>
-#>   [1]  0.805680
-#>   [2]  0.814051
-#>   [3]  0.403911
-#>   [4]  0.218431
+#>   [1] 0.0652161
+#>   [2] 0.3542068
+#>   [3] 0.8251994
+#>   [4] 0.2738182
 #>   -------
 #>   regions: 5 ranges and 0 metadata columns
 #>   seqinfo: 2 sequences from an unspecified genome; no seqlengths
