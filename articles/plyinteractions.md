@@ -1202,7 +1202,7 @@ Supporting documentation was generated using the following resources:
     #>  collate  en_US.UTF-8
     #>  ctype    en_US.UTF-8
     #>  tz       UTC
-    #>  date     2026-10-03
+    #>  date     2026-10-05
     #>  pandoc   3.11 @ /usr/bin/ (via rmarkdown)
     #>  quarto   1.10.18 @ /usr/local/bin/quarto
     #> 
@@ -1257,7 +1257,7 @@ Supporting documentation was generated using the following resources:
     #>  pillar                 1.11.1    2025-09-17 [2] RSPM (R 4.6.0)
     #>  pkgconfig              2.0.3     2019-09-22 [2] RSPM (R 4.6.0)
     #>  pkgdown                2.2.1     2026-07-07 [1] RSPM (R 4.6.0)
-    #>  plyinteractions      * 1.11.1    2026-10-03 [1] Bioconductor
+    #>  plyinteractions      * 1.11.1    2026-10-05 [1] Bioconductor
     #>  plyr                   1.8.9     2023-10-02 [1] RSPM (R 4.6.0)
     #>  plyranges            * 1.33.2    2026-07-30 [1] Bioconductor 3.24 (R 4.6.1)
     #>  R6                     2.6.1     2025-02-15 [2] RSPM (R 4.6.0)
